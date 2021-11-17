@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profilesSearch from "../api/profilesSearch";
 
@@ -21,34 +21,45 @@ class CardItem extends React.Component {
     }
 }
 
-class Body extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { profiles: [] };
-    }
+const Body = (props) => {
 
-    onCardClick = ID => {
-        profilesSearch.get(`posts/${ID}`).then(response => {
-            console.log(response);
+    const [profiles, setProfiles] = useState([]);
 
-            this.setState({profiles: response});
-        });
-    }
+    // const onCardClick = ID => {
+    //     profilesSearch.get(`posts/${ID}`).then(response => {
+    //         console.log(response);
 
-    render() {
-        this.onCardClick('');
+    //         this.setState({profiles: response});
+    //     });
+    // }
 
-        let cards = this.state.profiles.map((item) => {
-            return <CardItem cardHeader={item.title} cardBody={item.body} id={item.id} onClick={this.onCardClick(item.id)} />;
-        });
+    useEffect(() => {
+        // Make api call for list of posts (/posts).
+        // After getting response, set it into profiles. use setProfiles. 
+        // line 45 will be empty
 
-        return (<main>
-            {/*    Insert cards here    */}
-                <div className='p-3'>
-                    {cards}
-                </div>
-            </main>);
-    }
+        effect
+        return () => {
+            cleanup
+        }
+    }, [])
+
+    // onCardClick('');
+
+    // let cards = this.state.profiles.map((item) => {
+    //     return <CardItem cardHeader={item.title} cardBody={item.body} id={item.id} onClick={this.onCardClick(item.id)} />;
+    // });
+
+    return (
+    //Loop through profiles and map to card items. 
+    
+
+    <main>
+        {/*    Insert cards here    */}
+            <div className='p-3'>
+                {cards}
+            </div>
+        </main>);
 }
 
 //#endregion
