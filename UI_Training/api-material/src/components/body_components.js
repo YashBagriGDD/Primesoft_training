@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import profilesSearch from "../api/profilesSearch";
 
 //#region Body
 
@@ -37,27 +37,30 @@ const Body = (props) => {
         // Make api call for list of posts (/posts).
         // After getting response, set it into profiles. use setProfiles. 
         // line 45 will be empty
+        const search = async () => {
+            const data = await axios.get(`https://jsonplaceholder.typicode.com/posts/`);
 
-        effect
-        return () => {
-            cleanup
-        }
+            console.log(data);
+            setProfiles(data.data);
+        };
+
+        search();
+
     }, [])
 
-    // onCardClick('');
-
-    // let cards = this.state.profiles.map((item) => {
-    //     return <CardItem cardHeader={item.title} cardBody={item.body} id={item.id} onClick={this.onCardClick(item.id)} />;
-    // });
+    //Loop through profiles and map to card items.
+    let cards = profiles.map((item) => {
+        return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} />;
+    });
 
     return (
-    //Loop through profiles and map to card items. 
+
     
 
     <main>
         {/*    Insert cards here    */}
             <div className='p-3'>
-                {cards}
+                <div className="row">{cards}</div>
             </div>
         </main>);
 }
