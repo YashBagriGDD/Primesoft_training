@@ -37,30 +37,28 @@ const Body = (props) => {
         // Make api call for list of posts (/posts).
         // After getting response, set it into profiles. use setProfiles. 
         // line 45 will be empty
-        const search = async () => {
-            const data = await axios.get(`https://jsonplaceholder.typicode.com/posts/`);
+        const fetchPosts = async () => {
+            const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/`);
 
-            console.log(data);
-            setProfiles(data.data);
+            //console.log(response);
+            setProfiles(response.data);
         };
 
-        search();
+        fetchPosts();
 
     }, [])
 
     //Loop through profiles and map to card items.
-    let cards = profiles.map((item) => {
-        return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} />;
-    });
+    const cards = () => {
+        return profiles.map((item) => {
+            return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} />;
+        });
+    };
 
-    return (
-
-    
-
-    <main>
+    return (<main>
         {/*    Insert cards here    */}
             <div className='p-3'>
-                <div className="row">{cards}</div>
+                <div className="row">{cards()}</div>
             </div>
         </main>);
 }

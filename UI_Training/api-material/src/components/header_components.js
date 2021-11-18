@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 //#region Header
 
-const NAVBAR_LINKS = [{name: 'Features', src: '#'},{name: 'Enterprise', src: '#'},{name: 'Support', src: '#'},{name: 'Pricing', src: '#'},{name: 'Checkout', src: 'checkout.html'}];
+const NAVBAR_LINKS = [{name: 'Features', src: '#'},{name: 'Enterprise', src: '#'},{name: 'Support', src: '#'},{name: 'Pricing', src: '#'},{name: 'Checkout', src: '/checkout'}];
 
 class NavbarItem extends React.Component {
     render() {
