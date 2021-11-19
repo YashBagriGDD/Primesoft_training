@@ -1,17 +1,18 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
 
 //#region Header
 
-const NAVBAR_LINKS = [{name: 'Features', src: '#'},{name: 'Enterprise', src: '#'},{name: 'Support', src: '#'},{name: 'Pricing', src: '#'},{name: 'Checkout', src: '/checkout'}];
+const NAVBAR_LINKS = [{name: 'Features', src: '#'},{name: 'Enterprise', src: '#'},{name: 'Support', src: '#'},{name: 'Pricing', src: '/'},{name: 'Checkout', src: '/checkout'}];
 
 class NavbarItem extends React.Component {
     render() {
         if (NAVBAR_LINKS.indexOf(this.props.item) + 1 < NAVBAR_LINKS.length){
-            return <a className="me-3 py-2 text-dark text-decoration-none" href={this.props.item.src}>{this.props.item.name}</a>;
+            return <Link className="me-3 py-2 text-dark text-decoration-none" to={this.props.item.src}>{this.props.item.name}</Link>;
         }
         else {
-            return <a className="py-2 text-dark text-decoration-none" href={this.props.item.src}>{this.props.item.name}</a>;
+            return <Link className="py-2 text-dark text-decoration-none" to={this.props.item.src}>{this.props.item.name}</Link>;
         }
     }
 }
