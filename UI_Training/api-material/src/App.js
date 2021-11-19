@@ -9,6 +9,7 @@ import Footer from "./components/footer_components";
 import './App.css';
 import Body from "./components/body_components";
 import CheckoutComponent from "./components/checkout_component";
+import PostBody from "./components/posts_component";
 
 function App() {
   return (
@@ -25,11 +26,14 @@ function App() {
                 <Route path="/checkout">
                     <CheckoutComponent />
                 </Route>
+                <Route path="/posts/:postid">
+                    <PostBody />
+                </Route>
                 <Route path="/">
                     <Body />
-                    <Footer />
                 </Route>
             </Switch>
+            <Footer />
         </div>
     </Router>
   );

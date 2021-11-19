@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from "react-router-dom";
 
 //#region Body
 
@@ -9,12 +10,14 @@ class CardItem extends React.Component {
         return (
             <div className='col-sm-4'>
                 <div className='card mb-4 rounded-3 shadow-sm'>
-                    <div className='card-header py-3'>
-                        <h4 className="my-0 fw-normal">{this.props.cardHeader}</h4>
-                    </div>
-                    <div className='card-body'>
-                        <span className='fw-light'>{this.props.cardBody}</span>
-                    </div>
+                    <Link to={`/posts/${this.props.link}`} className="text-decoration-none text-black" >
+                        <div className='card-header py-3'>
+                            <h4 className="my-0 fw-normal">{this.props.cardHeader}</h4>
+                        </div>
+                        <div className='card-body'>
+                            <span className='fw-light'>{this.props.cardBody}</span>
+                        </div>
+                    </Link>
                 </div>
             </div>
         );
@@ -25,14 +28,6 @@ const Body = (props) => {
 
     const [profiles, setProfiles] = useState([]);
 
-    // const onCardClick = ID => {
-    //     profilesSearch.get(`posts/${ID}`).then(response => {
-    //         console.log(response);
-
-    //         this.setState({profiles: response});
-    //     });
-    // }
-
     useEffect(() => {
         // Make api call for list of posts (/posts).
         // After getting response, set it into profiles. use setProfiles. 
@@ -40,7 +35,6 @@ const Body = (props) => {
         const fetchPosts = async () => {
             const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/`);
 
-            //console.log(response);
             setProfiles(response.data);
         };
 
@@ -50,12 +44,9 @@ const Body = (props) => {
 
     //Loop through profiles and map to card items.
     //Add Link to= to navigate to the details screen, pass the card id into the link (/card/${id})
-    // read :id using useParams()
-    // make api call to get post by id
-    // print body in a separate component
     const cards = () => {
         return profiles.map((item) => {
-            return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} />;
+            return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} link={item.id} />;
         });
     };
 
