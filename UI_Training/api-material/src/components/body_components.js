@@ -49,11 +49,16 @@ const Body = (props) => {
     }, [])
 
     //Loop through profiles and map to card items.
+    //Add Link to= to navigate to the details screen, pass the card id into the link (/card/${id})
+    // read :id using useParams()
+    // make api call to get post by id
+    // print body in a separate component
     const cards = () => {
         return profiles.map((item) => {
             return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} />;
         });
     };
+
 
     return (<main>
         {/*    Insert cards here    */}

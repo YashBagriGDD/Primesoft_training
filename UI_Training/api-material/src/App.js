@@ -20,14 +20,12 @@ function App() {
           Checkout component should come under switch
           Checkout component route will be /checkout
           and body component with be / */}
-
+          <Header />
             <Switch>
                 <Route path="/checkout">
-                    <Header />
                     <CheckoutComponent />
                 </Route>
                 <Route path="/">
-                    <Header />
                     <Body />
                     <Footer />
                 </Route>
