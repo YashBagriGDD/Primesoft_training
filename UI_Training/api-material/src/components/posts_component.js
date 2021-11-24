@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
 import {connect} from "react-redux";
-import {fetchPosts} from "../actions";
+import {fetchPostDetail} from "../actions";
 
 
 class CardItem extends React.Component {
@@ -29,7 +29,7 @@ const PostBody = props => {
     let { postid } = useParams();
 
     useEffect(() => {
-        props.fetchPosts(postid);
+        props.fetchPostDetail(postid);
     }, []);
 
     let postItem = <CardItem cardHeader={props.post.title} cardBody={props.post.body} key={props.post.id} />;
@@ -44,7 +44,7 @@ const PostBody = props => {
 }
 
 const mapStateToProps = state => {
-    return { post: state.posts, id: state.posts.id };
+    return { post: state.posts.detail };
 };
 
-export default connect(mapStateToProps, { fetchPosts })(PostBody);
+export default connect(mapStateToProps, { fetchPostDetail })(PostBody);

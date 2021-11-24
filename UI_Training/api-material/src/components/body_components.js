@@ -33,7 +33,7 @@ const Body = (props) => {
     //Loop through profiles and map to card items.
     //Add Link to= to navigate to the details screen, pass the card id into the link (/card/${id})
     const cards = () => {
-        return props.profiles.map((item) => {
+        return props?.profiles?.map((item) => {
             return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} link={item.id} />;
         });
     };
@@ -48,7 +48,7 @@ const Body = (props) => {
 }
 
 const mapStateToProps = state => {
-    return {profiles: state.posts};
+    return {profiles: state.posts.list};
 };
 
 //#endregion
