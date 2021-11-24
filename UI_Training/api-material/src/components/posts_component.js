@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {connect} from "react-redux";
 import {fetchPostDetail} from "../actions";
+import UserHeader from "./user_component";
 
 
 class CardItem extends React.Component {
@@ -15,6 +16,7 @@ class CardItem extends React.Component {
                     </div>
                     <div className='card-body'>
                         <span className='fw-light'>{this.props.cardBody}</span>
+                        <UserHeader userId={this.props.userId} />
                     </div>
                 </div>
             </div>
@@ -26,13 +28,13 @@ class CardItem extends React.Component {
 // make api call to get post by id
 // print body in a separate component
 const PostBody = props => {
-    let { postid } = useParams();
+    let { postId } = useParams();
 
     useEffect(() => {
-        props.fetchPostDetail(postid);
+        props.fetchPostDetail(postId);
     }, []);
 
-    let postItem = <CardItem cardHeader={props.post.title} cardBody={props.post.body} key={props.post.id} />;
+    let postItem = <CardItem cardHeader={props.post.title} cardBody={props.post.body} key={props.post.id} userId={props.post.userId} />;
 
     return (
         <main>

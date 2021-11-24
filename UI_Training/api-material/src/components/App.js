@@ -26,7 +26,7 @@ function App() {
                 <Route path="/checkout">
                     <CheckoutComponent />
                 </Route>
-                <Route path="/posts/:postid">
+                <Route path="/posts/:postId">
                     <PostBody />
                 </Route>
                 <Route path="/">

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import { connect }  from "react-redux";
 import { fetchPosts } from "../actions";
+import UserHeader from "./user_component";
 
 //#region Body
 
@@ -17,6 +18,7 @@ class CardItem extends React.Component {
                         </div>
                         <div className='card-body'>
                             <span className='fw-light'>{this.props.cardBody}</span>
+                            <UserHeader userId={this.props.userId} />
                         </div>
                     </Link>
                 </div>
@@ -34,7 +36,7 @@ const Body = (props) => {
     //Add Link to= to navigate to the details screen, pass the card id into the link (/card/${id})
     const cards = () => {
         return props?.profiles?.map((item) => {
-            return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} link={item.id} />;
+            return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} link={item.id} userId={item.userId} />;
         });
     };
 

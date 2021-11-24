@@ -1,9 +1,9 @@
 import jsonPlaceholder from "../apis/jsonPlaceholder";
 
 //Duplicate to handle single post fetchPostDetail
-export const fetchPosts = (id = "") => async dispatch => {
+export const fetchPosts = () => async dispatch => {
     //Put async calls in try catch blocks 
-    const response = await jsonPlaceholder.get(`/posts/${id}`);
+    const response = await jsonPlaceholder.get(`/posts`);
 
     dispatch({
         type: 'FETCH_POSTS',
@@ -20,3 +20,14 @@ export const fetchPostDetail = (id = "") => async dispatch => {
         payload: response.data
     })
 };
+
+export const fetchUser = (userId = "") => {
+    return async (dispatch) => {
+        const response = await jsonPlaceholder.get(`/users/${userId}`);
+
+        dispatch({
+            type: "FETCH_USER",
+            payload: response.data
+        })
+    }
+}
