@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
+import { connect }  from "react-redux";
+import { fetchPosts } from "../actions";
 
 //#region Body
 
@@ -25,27 +26,14 @@ class CardItem extends React.Component {
 }
 
 const Body = (props) => {
-
-    const [profiles, setProfiles] = useState([]);
-
     useEffect(() => {
-        // Make api call for list of posts (/posts).
-        // After getting response, set it into profiles. use setProfiles. 
-        // line 45 will be empty
-        const fetchPosts = async () => {
-            const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/`);
-
-            setProfiles(response.data);
-        };
-
-        fetchPosts();
-
+        props.fetchPosts();
     }, [])
 
     //Loop through profiles and map to card items.
     //Add Link to= to navigate to the details screen, pass the card id into the link (/card/${id})
     const cards = () => {
-        return profiles.map((item) => {
+        return props.profiles.map((item) => {
             return <CardItem cardHeader={item.title} cardBody={item.body} key={item.id} link={item.id} />;
         });
     };
@@ -59,6 +47,10 @@ const Body = (props) => {
         </main>);
 }
 
+const mapStateToProps = state => {
+    return {profiles: state.posts};
+};
+
 //#endregion
 
-export default Body;
+export default connect(mapStateToProps, { fetchPosts })(Body);

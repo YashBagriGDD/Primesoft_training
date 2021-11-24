@@ -4,12 +4,12 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import Header from "./components/header_components";
-import Footer from "./components/footer_components";
+import Header from "./header_components";
+import Footer from "./footer_components";
 import './App.css';
-import Body from "./components/body_components";
-import CheckoutComponent from "./components/checkout_component";
-import PostBody from "./components/posts_component";
+import Body from "./body_components";
+import CheckoutComponent from "./checkout_component";
+import PostBody from "./posts_component";
 
 function App() {
   return (

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useParams} from "react-router-dom";
+import {connect} from "react-redux";
+import {fetchPosts} from "../actions";
+
 
 class CardItem extends React.Component {
     render() {
@@ -24,22 +26,13 @@ class CardItem extends React.Component {
 // make api call to get post by id
 // print body in a separate component
 const PostBody = props => {
-    const [post, setPost] = useState([]);
     let { postid } = useParams();
 
-    const url = `https://jsonplaceholder.typicode.com/posts/${postid}`
-
     useEffect(() => {
-        const fetchPost = async () => {
-            const response = await axios.get(url);
-
-            setPost(response.data);
-        }
-
-        fetchPost();
+        props.fetchPosts(postid);
     }, []);
 
-    let postItem = <CardItem cardHeader={post.title} cardBody={post.body} key={post.id} />;
+    let postItem = <CardItem cardHeader={props.post.title} cardBody={props.post.body} key={props.post.id} />;
 
     return (
         <main>
@@ -50,4 +43,8 @@ const PostBody = props => {
     );
 }
 
-export default PostBody;
+const mapStateToProps = state => {
+    return { post: state.posts, id: state.posts.id };
+};
+
+export default connect(mapStateToProps, { fetchPosts })(PostBody);
