@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import bootstrapLogo from '../bootstrap-logo.svg';
+import bootstrapLogo from '../assets/bootstrap-logo.svg';
 
 
 class CheckoutComponent extends React.Component {

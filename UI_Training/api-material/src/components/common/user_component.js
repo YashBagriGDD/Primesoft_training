@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { fetchUser } from "../actions";
+import { fetchUser } from "../redux/actions";
 import { connect } from "react-redux";
 
 
