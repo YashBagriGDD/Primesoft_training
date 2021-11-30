@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link, useParams} from "react-router-dom";
 import {connect} from "react-redux";
-import {fetchPostDetail} from "../redux/actions";
+import {fetchPostDetail} from "../../redux/actions";
 import UserHeader from "./user_component";
 
 

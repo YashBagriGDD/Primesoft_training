@@ -1,15 +1,12 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route
+    Switch
 } from "react-router-dom";
-import Header from "./header_components";
-import Footer from "./footer_components";
+import Header from "./components/Layouts/header_components";
+import Footer from "./components/Layouts/footer_components";
 import './App.css';
-import Body from "./body_components";
-import CheckoutComponent from "./checkout_component";
-import PostBody from "./posts_component";
+import { Routes } from "./routes/Routes";
 
 function App() {
   return (
@@ -23,15 +20,7 @@ function App() {
           and body component with be / */}
           <Header />
             <Switch>
-                <Route path="/checkout">
-                    <CheckoutComponent />
-                </Route>
-                <Route path="/posts/:postId">
-                    <PostBody />
-                </Route>
-                <Route path="/">
-                    <Body />
-                </Route>
+                {Routes()}
             </Switch>
             <Footer />
         </div>

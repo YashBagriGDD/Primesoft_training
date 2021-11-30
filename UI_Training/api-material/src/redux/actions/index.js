@@ -1,4 +1,4 @@
-import jsonPlaceholder from "../apis/jsonPlaceholder";
+import jsonPlaceholder from "../../apis/jsonPlaceholder";
 
 //Duplicate to handle single post fetchPostDetail
 export const fetchPosts = () => async dispatch => {

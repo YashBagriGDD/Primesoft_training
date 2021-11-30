@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Link} from "react-router-dom";
 import { connect }  from "react-redux";
-import { fetchPosts } from "../redux/actions";
-import UserHeader from "./user_component";
+import { fetchPosts } from "../../redux/actions";
+import UserHeader from "../common/user_component";
 
 //#region Body
 
