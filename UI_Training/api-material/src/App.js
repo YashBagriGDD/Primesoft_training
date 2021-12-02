@@ -3,8 +3,8 @@ import {
     BrowserRouter as Router,
     Switch
 } from "react-router-dom";
-import Header from "./components/Layouts/header_components";
-import Footer from "./components/Layouts/footer_components";
+import Header from "./components/Layouts/HeaderComponent";
+import Footer from "./components/Layouts/FooterComponent";
 import './App.css';
 import { Routes } from "./routes/Routes";
 
@@ -18,11 +18,9 @@ function App() {
           Checkout component should come under switch
           Checkout component route will be /checkout
           and body component with be / */}
-          <Header />
             <Switch>
                 {Routes()}
             </Switch>
-            <Footer />
         </div>
     </Router>
   );
