@@ -8,33 +8,31 @@ class CardItem extends React.Component {
         super(props);
     }
 
+    cardBody() {
+        return(
+            <div>
+                <div className='card-header py-3'>
+                    <h4 className="my-0 fw-normal">{this.props.cardHeader}</h4>
+                </div>
+                <div className='card-body'>
+                    <span className='fw-light'>{this.props.cardBody}</span>
+                    <UserHeader userId={this.props.userId} />
+                </div>
+            </div>
+        );
+    };
+
     render() {
         let cardContent
 
         if(this.props.link){
             cardContent = (
                 <Link to={`/posts/${this.props.link}`} className="text-decoration-none text-black" >
-                    <div className='card-header py-3'>
-                        <h4 className="my-0 fw-normal">{this.props.cardHeader}</h4>
-                    </div>
-                    <div className='card-body'>
-                        <span className='fw-light'>{this.props.cardBody}</span>
-                        <UserHeader userId={this.props.userId} />
-                    </div>
+                    {this.cardBody()}
                 </Link>
             );
         } else {
-            cardContent = (
-                <div>
-                    <div className='card-header py-3'>
-                        <h4 className="my-0 fw-normal">{this.props.cardHeader}</h4>
-                    </div>
-                    <div className='card-body'>
-                        <span className='fw-light'>{this.props.cardBody}</span>
-                        <UserHeader userId={this.props.userId} />
-                    </div>
-                </div>
-            );
+            cardContent = this.cardBody();
         }
 
         return (
