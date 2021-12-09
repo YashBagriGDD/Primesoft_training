@@ -1,0 +1,12 @@
+Ionic react
+
+1. Dependencies to install
+Global install ionic
+npm install -g @ionic/cli
+
+Create a react project
+ionic start myApp blank --type=react
+cd myApp
+
+Run server
+ionic serve
