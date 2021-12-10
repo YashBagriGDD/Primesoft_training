@@ -14,7 +14,7 @@ const Header: React.FC = () => {
                 <IonButtons slot="start">
                     <IonMenuToggle>
                         <IonButton>
-                            <IonIcon slot="icon-only" name="menu"></IonIcon>
+                            <IonIcon name="menu-outline"></IonIcon>
                         </IonButton>
                     </IonMenuToggle>
                 </IonButtons>

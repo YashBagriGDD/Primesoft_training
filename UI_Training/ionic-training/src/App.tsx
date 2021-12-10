@@ -27,9 +27,7 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Switch>
           {Routes()}
-        </Switch>
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

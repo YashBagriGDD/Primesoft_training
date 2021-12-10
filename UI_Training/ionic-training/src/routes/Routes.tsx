@@ -1,23 +1,12 @@
-import Home from "../containers/Home";
 import BaseLayout from "../components/Layouts/BaseLayout";
 import React from "react";
 import { Route } from "react-router";
-
-const routes = [
-    {
-        path: "/",
-        component: Home,
-    },
-    {
-        path: "/home",
-        component: Home,
-    }
-];
+import { Paths } from "../constants/Paths";
 
 export const Routes: () => any[] = () => {
-    return routes.map(route => {
+    return Paths.map(route => {
         return (
-            <Route key={route.path}
+            <Route key={route.name}
                    path={route.path}
                    render={(props) => (
                        <BaseLayout {...props}>

@@ -1,40 +1,30 @@
 import {
     IonContent,
-    IonHeader, IonIcon,
+    IonIcon,
     IonItem,
     IonLabel,
     IonList,
-    IonListHeader,
     IonMenu,
     IonMenuToggle,
-    IonTitle,
-    IonToolbar
 } from "@ionic/react";
 import React from "react";
-
+import { Paths } from "../../constants/Paths";
 
 const NavSidebar: React.FC = () => {
     return(
         <IonMenu content-id="main-content">
-            <IonHeader>
-                <IonToolbar color="primary">
-                    <IonTitle>Menu</IonTitle>
-                </IonToolbar>
-            </IonHeader>
-
             <IonContent>
                 <IonList>
-                    <IonListHeader>
-                        Navigate
-                    </IonListHeader>
-                    <IonMenuToggle auto-hide="false">
-                        <IonItem button>
-                            <IonIcon slot="start" name='home'></IonIcon>
-                            <IonLabel>
-                                Home
-                            </IonLabel>
-                        </IonItem>
-                    </IonMenuToggle>
+                    {Paths.map(routes => {
+                        return(
+                            <IonMenuToggle auto-hide="false" key={routes.name}>
+                                <IonItem routerLink={routes.path}>
+                                    <IonIcon slot="start" ios={routes.icon} md={routes.icon}></IonIcon>
+                                    <IonLabel>{routes.name}</IonLabel>
+                                </IonItem>
+                            </IonMenuToggle>
+                        );
+                    })}
                 </IonList>
             </IonContent>
         </IonMenu>
