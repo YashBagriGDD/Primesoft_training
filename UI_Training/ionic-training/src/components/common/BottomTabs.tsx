@@ -13,7 +13,7 @@ const BottomTabs: React.FC = () => {
                 <IonLabel>Movies</IonLabel>
                 <IonIcon ios={videocam} md={videocam}></IonIcon>
             </IonTabButton>
-            <IonTabButton>
+            <IonTabButton tab={"games"}>
                 <IonLabel>Games</IonLabel>
                 <IonIcon ios={gameController} md={gameController}></IonIcon>
             </IonTabButton>

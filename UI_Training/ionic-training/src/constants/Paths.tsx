@@ -1,7 +1,8 @@
 import Home from "../containers/Home";
 import Explore from "../containers/Explore";
 import MyPage from "../containers/MyPage";
-import {compassOutline, homeOutline, personOutline} from "ionicons/icons";
+import {compassOutline, folderOpen, homeOutline, personOutline} from "ionicons/icons";
+import TabbedLayout from "../components/Layouts/TabbedLayout";
 
 
 
@@ -19,9 +20,15 @@ export const Paths = [
         icon: compassOutline,
     },
     {
-        path: '/mypage',
+        path: "/mypage",
         component: MyPage,
         name: "My Page",
         icon: personOutline,
+    },
+    {
+        path: "/tabs",
+        component: TabbedLayout,
+        name: "Tabbed Page",
+        icon: folderOpen,
     }
 ];
