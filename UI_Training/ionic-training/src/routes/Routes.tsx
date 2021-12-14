@@ -8,6 +8,7 @@ export const Routes: () => any[] = () => {
         return (
             <Route key={route.name}
                    path={route.path}
+                   exact = {true}
                    render={(props) => (
                        <BaseLayout {...props}>
                            <route.component />

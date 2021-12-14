@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         <IonContent className="ion-padding">
             <h1>Home Page!</h1>
 
-            <Carousel props={cards} />
+            <Carousel data={cards} type={"cardCarousel"}/>
         </IonContent>
     );
 };
