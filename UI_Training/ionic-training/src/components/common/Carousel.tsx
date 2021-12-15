@@ -24,13 +24,13 @@ const Carousel: React.FC<Props> = (props) => {
     if (props.type.toLowerCase() == "card") {
         slideItems = props.cardData?.map((item, index) => (
             <SwiperSlide key={index}>
-                <Card header={item.header} content={item.content} subtitle={item.subtitle} img={item.img}/>
+                <Card header={item.header} content={item.content} subtitle={item.subtitle} img={item.img} />
             </SwiperSlide>
         ));
     } else if (props.type.toLowerCase() == "img") {
         slideItems = props.imgData?.map((item, index) => (
             <SwiperSlide key={index}>
-                <img src={item}/>
+                <img src={item} />
             </SwiperSlide>
         ))
     }
