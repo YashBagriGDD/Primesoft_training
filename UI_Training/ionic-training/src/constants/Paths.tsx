@@ -1,9 +1,16 @@
 import Home from "../containers/Home";
 import Explore from "../containers/Explore";
 import MyPage from "../containers/MyPage";
-import {compassOutline, folderOpen, homeOutline, personOutline} from "ionicons/icons";
+import {
+    businessOutline,
+    homeOutline,
+    informationCircleOutline,
+    listOutline,
+    lockClosedOutline,
+    logOutOutline,
+    personOutline
+} from "ionicons/icons";
 import TabbedLayout from "../components/Layouts/TabbedLayout";
-
 
 
 export const Paths = [
@@ -12,23 +19,42 @@ export const Paths = [
         component: Home,
         name: "Home",
         icon: homeOutline,
+        sidebarRender: false,
     },
     {
-        path: "/explore",
-        component: Explore,
-        name: "Explore",
-        icon: compassOutline,
+        path: "/organizations",
+        component: Home,
+        name: "Organizations",
+        icon: businessOutline,
     },
     {
-        path: "/mypage",
+        path: "/rollcalls",
         component: MyPage,
-        name: "My Page",
+        name: "Roll Calls",
+        icon: listOutline,
+    },
+    {
+        path: "/lobbyists",
+        component: Explore,
+        name: "Lobbyists",
         icon: personOutline,
     },
     {
-        path: "/tabs",
+        path: "/changepassword",
         component: TabbedLayout,
-        name: "Tabbed Page",
-        icon: folderOpen,
-    }
+        name: "Change Password",
+        icon: lockClosedOutline,
+    },
+    {
+        path: "/terms",
+        component: Home,
+        name: "Terms and Conditions",
+        icon: informationCircleOutline,
+    },
+    {
+        path: "/logout",
+        component: Home,
+        name: "Logout",
+        icon: logOutOutline,
+    },
 ];

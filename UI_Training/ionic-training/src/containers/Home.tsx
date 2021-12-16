@@ -24,8 +24,7 @@ const Home: React.FC = () => {
     return (
         <IonContent className="ion-padding">
             <h1>Home Page!</h1>
-
-            <Carousel cardData={cards} type={"card"}/>
+            <Carousel cardData={cards} type={"card"} />
         </IonContent>
     );
 };

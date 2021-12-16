@@ -30,7 +30,7 @@ const Carousel: React.FC<Props> = (props) => {
     } else if (props.type.toLowerCase() == "img") {
         slideItems = props.imgData?.map((item, index) => (
             <SwiperSlide key={index}>
-                <img src={item} />
+                <img src={item}  alt={"image"}/>
             </SwiperSlide>
         ))
     }

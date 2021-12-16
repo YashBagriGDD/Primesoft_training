@@ -1,14 +1,11 @@
 import React from "react";
-import {
-    IonButton,
-    IonButtons,
-    IonHeader, IonMenuToggle,
-    IonIcon,
-    IonToolbar, IonTitle
-} from "@ionic/react";
+import {IonButton, IonButtons, IonHeader, IonIcon, IonMenuToggle, IonTitle, IonToolbar} from "@ionic/react";
+import {notificationsOutline} from "ionicons/icons";
+
+import "./Header.css"
 
 const Header: React.FC = () => {
-    return(
+    return (
         <IonHeader>
             <IonToolbar>
                 <IonButtons slot="start">
@@ -18,7 +15,10 @@ const Header: React.FC = () => {
                         </IonButton>
                     </IonMenuToggle>
                 </IonButtons>
-                <IonTitle>Header</IonTitle>
+                <IonTitle>eRollCall</IonTitle>
+                <IonButton slot={"end"}>
+                    <IonIcon md={notificationsOutline}/>
+                </IonButton>
             </IonToolbar>
         </IonHeader>
     );
