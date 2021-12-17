@@ -34,11 +34,11 @@ const NavSidebar: React.FC = () => {
     return (
         <IonMenu content-id="main-content">
             <IonContent>
-                <IonList className={"purple"}>
-                    <IonListHeader className={"light"}>
-                        <IonIcon ios={person} md={person}/>
-                        <IonHeader><span>Username</span></IonHeader>
-                        <IonHeader><span id={"viewProfile"}>View profile</span></IonHeader>
+                <IonList>
+                    <IonListHeader>
+                        <div><IonIcon ios={person} md={person}/></div>
+                        <div><IonHeader><span>Username</span></IonHeader></div>
+                        <div><IonHeader><span id={"viewProfile"}>View profile</span></IonHeader></div>
                     </IonListHeader>
                     {sidebarItems}
                 </IonList>

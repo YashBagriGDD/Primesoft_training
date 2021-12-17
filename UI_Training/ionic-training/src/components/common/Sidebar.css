@@ -1,12 +1,12 @@
-.light {
-    background: #FFFFFF;
-    color: #0D0D0D;
+ion-menu ion-content {
+    --background: #5B37A1;
 }
 
-.purple {
-    background: #5b37a1;
+.list-md {
+    padding-top: 0px;
 }
 
-IonHeader {
-    float: none;
+ion-menu ion-list-header {
+    --background: #FFFFFF;
+    --ion-text-color:  #0D0D0D;
 }
