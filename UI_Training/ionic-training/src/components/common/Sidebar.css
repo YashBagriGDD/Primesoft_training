@@ -1,5 +1,6 @@
 ion-menu ion-content {
     --background: #5B37A1;
+    --ion-item-background: #5B37A1;
 }
 
 .list-md {

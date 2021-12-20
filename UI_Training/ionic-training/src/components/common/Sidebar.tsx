@@ -15,6 +15,7 @@ import {person} from "ionicons/icons";
 
 import "./Sidebar.css";
 
+//TODO: Change to take paths from props
 const NavSidebar: React.FC = () => {
     const sidebarItems = Paths.filter(routes => {
         if (routes.sidebarRender === false)

@@ -5,7 +5,7 @@ type State = {
     list: HTMLObjectElement[]
 };
 
-export default (state: State, action: Actions) => {
+export default (state: State = {list: []}, action: Actions) => {
     switch (action.type) {
         case "BUILD":
             return {...state, list: action.payload};
