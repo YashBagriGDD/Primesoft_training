@@ -9,7 +9,7 @@ const BaseLayout: React.FC = ({ children }) => {
     <div>
       <NavSidebar paths={Paths} username={"username"} />
       <IonPage id="main-content">
-        <Header />
+        <Header title={"eRollCall"} />
         {children}
         <Footer />
       </IonPage>
