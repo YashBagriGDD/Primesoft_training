@@ -11,6 +11,7 @@ import {
 } from "@ionic/react";
 import React from "react";
 import { person } from "ionicons/icons";
+import { useLocation } from "react-router-dom";
 
 import "./Sidebar.css";
 interface Props {
@@ -27,6 +28,9 @@ export interface RouteInterface {
 }
 
 const NavSidebar: React.FC<Props> = (props: Props) => {
+  // const sidebarItems = ;
+  const location = useLocation();
+
   const sidebarItems = props.paths
     .filter((routes: RouteInterface) => {
       if (routes.sidebarRender === false) return false;
@@ -35,7 +39,10 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
     .map((routes) => {
       return (
         <IonMenuToggle auto-hide="false" key={routes.name}>
-          <IonItem routerLink={routes.path}>
+          <IonItem
+            className={location.pathname === routes.path ? "selected" : ""}
+            routerLink={routes.path}
+          >
             <IonIcon slot="start" ios={routes.icon} md={routes.icon} />
             <IonLabel>{routes.name}</IonLabel>
           </IonItem>

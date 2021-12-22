@@ -1,4 +1,4 @@
-import { IonContent, IonPage } from "@ionic/react";
+import { IonPage } from "@ionic/react";
 import Header from "./Header";
 import Footer from "./Footer";
 import NavSidebar from "../common/Sidebar";
