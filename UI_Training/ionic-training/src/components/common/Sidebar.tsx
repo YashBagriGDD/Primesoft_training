@@ -19,6 +19,7 @@ interface Props {
   username: string;
 }
 
+//TODO: Move exported inferaces to a separate interface folder
 export interface RouteInterface {
   name: string;
   path: string;
