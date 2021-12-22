@@ -17,7 +17,11 @@ class Card extends React.Component<CardInterface, any> {
   render(): React.ReactNode {
     return (
       <IonCard>
-        {this.props.img ? <img src={this.props.img} /> : ""}
+        {this.props.img ? (
+          <img src={this.props.img} alt={`${this.props.header}`} />
+        ) : (
+          ""
+        )}
         <IonCardHeader>
           {this.props.subtitle ? (
             <IonCardSubtitle color={"warning"}>
