@@ -1,6 +1,6 @@
 ion-menu ion-content {
-  --background: var(--purple-item);
-  --ion-item-background: var(--purple-item);
+  --background: var(--ion-color-purple);
+  --ion-item-background: var(--ion-color-purple);
 }
 
 ion-menu ion-list-header {
@@ -17,8 +17,8 @@ ion-menu ion-icon {
 }
 
 ion-item.selected {
-  --background: var(--pruple-item-selected);
-  --ion-text-color: var(--ion-color-warning);
+  --background: var(--ion-color-purple-shade);
+  --ion-text-color: var(--ion-color-light-shade);
 }
 
 ion-item.selected ion-icon {
