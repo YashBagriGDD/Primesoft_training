@@ -26,10 +26,6 @@ ion-item.selected ion-icon {
   color: var(--ion-color-light-shade);
 }
 
-.item-inner {
-  border-style: none;
-}
-
 .list-md {
   padding-top: 0px;
 }

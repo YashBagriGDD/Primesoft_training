@@ -20,8 +20,6 @@ interface Props {
   username: string;
 }
 
-//TODO: Move exported inferaces to a separate interface folder
-
 const NavSidebar: React.FC<Props> = (props: Props) => {
   // const sidebarItems = ;
   const location = useLocation();
