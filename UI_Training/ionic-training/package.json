@@ -5,7 +5,7 @@
   "dependencies": {
     "@capacitor/android": "3.3.3",
     "@capacitor/app": "1.0.7",
-    "@capacitor/core": "3.3.3",
+    "@capacitor/core": "^3.3.3",
     "@capacitor/haptics": "1.1.3",
     "@capacitor/keyboard": "1.2.0",
     "@capacitor/status-bar": "1.0.6",
@@ -47,9 +47,15 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npx cap sync",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "android": "npx cap add android",
+    "ios": "npx cap add ios",
+    "electron": "npx capp add electron",
+    "android-open": "npx cap open android",
+    "ios-open": "npx cap open ios",
+    "electron-open": "npx capp open electron"
   },
   "eslintConfig": {
     "extends": [
@@ -70,7 +76,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.3.3"
+    "@capacitor/cli": "^3.3.3"
   },
   "description": "An Ionic project"
 }
