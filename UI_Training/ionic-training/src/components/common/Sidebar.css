@@ -10,6 +10,7 @@ ion-menu ion-list-header {
 
 ion-menu ion-item {
   --ion-text-color: var(--ion-color-light);
+  --inner-border-width: 0px;
 }
 
 ion-menu ion-icon {

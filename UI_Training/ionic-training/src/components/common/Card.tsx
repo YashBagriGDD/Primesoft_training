@@ -6,12 +6,7 @@ import {
   IonCardSubtitle,
   IonCardTitle,
 } from "@ionic/react";
-
-export interface CardInterface {
-  header: string;
-  content: string;
-  [key: string]: any;
-}
+import { CardInterface } from "../../interfaces/interfaces";
 
 class Card extends React.Component<CardInterface, any> {
   render(): React.ReactNode {

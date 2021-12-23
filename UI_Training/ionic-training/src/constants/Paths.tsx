@@ -11,7 +11,7 @@ import {
   personOutline,
 } from "ionicons/icons";
 import TabbedLayout from "../components/Layouts/TabbedLayout";
-import { RouteInterface } from "../components/common/Sidebar";
+import { RouteInterface } from "../interfaces/interfaces";
 
 export const Paths: RouteInterface[] = [
   {

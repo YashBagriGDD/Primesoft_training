@@ -1,7 +1,7 @@
 import "./Home.css";
 import React from "react";
 import { IonContent } from "@ionic/react";
-import { CardInterface } from "../components/common/Card";
+import { CardInterface } from "../interfaces/interfaces";
 import Carousel from "../components/common/Carousel";
 
 const cards: CardInterface[] = [

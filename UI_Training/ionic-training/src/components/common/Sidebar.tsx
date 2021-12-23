@@ -12,6 +12,7 @@ import {
 import React from "react";
 import { person } from "ionicons/icons";
 import { useLocation } from "react-router-dom";
+import { RouteInterface } from "../../interfaces/interfaces";
 
 import "./Sidebar.css";
 interface Props {
@@ -20,13 +21,6 @@ interface Props {
 }
 
 //TODO: Move exported inferaces to a separate interface folder
-export interface RouteInterface {
-  name: string;
-  path: string;
-  component: React.FC<{}>;
-  icon: string;
-  sidebarRender?: boolean;
-}
 
 const NavSidebar: React.FC<Props> = (props: Props) => {
   // const sidebarItems = ;

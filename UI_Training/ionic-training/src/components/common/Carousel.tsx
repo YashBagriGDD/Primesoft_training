@@ -1,7 +1,8 @@
 import React from "react";
-import Card, { CardInterface } from "./Card";
+import Card from "./Card";
 import { Swiper, SwiperSlide } from "swiper/react/swiper-react";
 import { Mousewheel, Pagination } from "swiper";
+import { CardInterface } from "../../interfaces/interfaces";
 
 import "swiper/swiper.min.css";
 // import 'swiper/modules/autoplay/autoplay.min.css';
