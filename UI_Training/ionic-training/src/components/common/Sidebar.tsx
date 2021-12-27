@@ -48,7 +48,7 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
       <IonContent>
         <IonList>
           <IonListHeader>
-            <div className="flexbox ion-align-items-center ion-nowrap">
+            <div className="flexbox ion-align-items-center ion-nowrap ion-padding">
               <div>
                 <IonIcon
                   ios={person}
@@ -58,8 +58,8 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
                 />
               </div>
               <div className="ion-align-items-stretch ion-wrap">
-                <IonTitle>{props.username}</IonTitle>
-                <IonTitle>View Profile</IonTitle>
+                <IonTitle className="username">{props.username}</IonTitle>
+                <IonTitle className="view-profile">View Profile</IonTitle>
               </div>
             </div>
           </IonListHeader>

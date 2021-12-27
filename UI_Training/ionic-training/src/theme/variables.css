@@ -4,6 +4,8 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   /* Personal Variables */
+  --ion-padding: 10px;
+
   --ion-color-purple: #5b37a1;
   --ion-color-purple-rgb: 91, 55, 161;
   --ion-color-purple-contrast: #ffffff;

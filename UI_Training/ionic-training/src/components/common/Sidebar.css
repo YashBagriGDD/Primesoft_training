@@ -17,9 +17,12 @@ ion-menu ion-icon {
   color: var(--ion-color-light);
 }
 
+ion-list-header ion-title {
+  font-weight: bold;
+}
+
 ion-item.selected {
   --background: var(--ion-color-purple-shade);
-  --ion-text-color: var(--ion-color-light-shade);
 }
 
 ion-item.selected ion-icon {
@@ -32,4 +35,14 @@ ion-item.selected ion-icon {
 
 .flexbox {
   display: flex;
+}
+
+.view-profile {
+  color: var(--ion-color-purple-tint);
+  font-size: medium;
+}
+
+.username {
+  padding-bottom: 3px;
+  text-transform: capitalize;
 }
