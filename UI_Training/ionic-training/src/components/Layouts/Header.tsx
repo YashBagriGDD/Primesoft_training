@@ -28,7 +28,7 @@ const Header: React.FC<Props> = (props) => {
           </IonMenuToggle>
         </IonButtons>
         <IonTitle>{props.title}</IonTitle>
-        <IonButton slot={"end"}>
+        <IonButton slot={"end"} fill={"clear"} color={"medium"}>
           <IonIcon md={notificationsOutline} />
         </IonButton>
       </IonToolbar>

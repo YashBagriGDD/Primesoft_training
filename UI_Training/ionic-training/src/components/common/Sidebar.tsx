@@ -1,6 +1,5 @@
 import {
   IonContent,
-  IonHeader,
   IonIcon,
   IonItem,
   IonLabel,
@@ -8,6 +7,7 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
+  IonTitle,
 } from "@ionic/react";
 import React from "react";
 import { person } from "ionicons/icons";
@@ -48,18 +48,19 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
       <IonContent>
         <IonList>
           <IonListHeader>
-            <div>
-              <IonIcon ios={person} md={person} />
-            </div>
-            <div>
-              <IonHeader>
-                <span>{props.username}</span>
-              </IonHeader>
-            </div>
-            <div>
-              <IonHeader>
-                <span id={"viewProfile"}>View profile</span>
-              </IonHeader>
+            <div className="flexbox ion-align-items-center ion-nowrap">
+              <div>
+                <IonIcon
+                  ios={person}
+                  md={person}
+                  size="large"
+                  color="primary"
+                />
+              </div>
+              <div className="ion-align-items-stretch ion-wrap">
+                <IonTitle>{props.username}</IonTitle>
+                <IonTitle>View Profile</IonTitle>
+              </div>
             </div>
           </IonListHeader>
           {sidebarItems}

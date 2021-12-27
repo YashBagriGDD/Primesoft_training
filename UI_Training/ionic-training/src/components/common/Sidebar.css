@@ -29,3 +29,7 @@ ion-item.selected ion-icon {
 .list-md {
   padding-top: 0px;
 }
+
+.flexbox {
+  display: flex;
+}
