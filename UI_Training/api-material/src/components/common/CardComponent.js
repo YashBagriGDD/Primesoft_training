@@ -4,19 +4,15 @@ import {Link} from "react-router-dom";
 
 
 class CardItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     cardBody() {
-        return(
+        return (
             <div>
                 <div className='card-header py-3'>
                     <h4 className="my-0 fw-normal">{this.props.cardHeader}</h4>
                 </div>
                 <div className='card-body'>
                     <span className='fw-light'>{this.props.cardBody}</span>
-                    <UserHeader userId={this.props.userId} />
+                    <UserHeader userId={this.props.userId}/>
                 </div>
             </div>
         );
@@ -25,9 +21,9 @@ class CardItem extends React.Component {
     render() {
         let cardContent
 
-        if(this.props.link){
+        if (this.props.link) {
             cardContent = (
-                <Link to={`/posts/${this.props.link}`} className="text-decoration-none text-black" >
+                <Link to={`/posts/${this.props.link}`} className="text-decoration-none text-black">
                     {this.cardBody()}
                 </Link>
             );
@@ -46,3 +42,4 @@ class CardItem extends React.Component {
 }
 
 export default CardItem;
+

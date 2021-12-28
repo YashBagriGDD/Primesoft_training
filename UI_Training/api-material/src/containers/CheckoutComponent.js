@@ -5,13 +5,13 @@ import bootstrapLogo from '../assets/images/bootstrap-logo.svg';
 
 class CheckoutComponent extends React.Component {
     render() {
-        return(<main>
+        return (<main>
             <div className=" py-5 text-center">
-                <img className="mb-3" src={bootstrapLogo} alt="bootstrap logo" width="72" height="57" />
-                    <h2>Checkout form</h2>
-                    <p className="lead">Below is an example form built entirely with Bootstrap’s form controls. Each
-                        required form group has a validation state that can be triggered by attempting to submit the
-                        form without completing it.</p>
+                <img className="mb-3" src={bootstrapLogo} alt="bootstrap logo" width="72" height="57"/>
+                <h2>Checkout form</h2>
+                <p className="lead">Below is an example form built entirely with Bootstrap’s form controls. Each
+                    required form group has a validation state that can be triggered by attempting to submit the
+                    form without completing it.</p>
             </div>
 
             {/*// <!-- Forms -->*/}
@@ -58,10 +58,10 @@ class CheckoutComponent extends React.Component {
                     <form className="card p-2">
                         <div className="input-group">
                             <input type="text" className="form-control" id="promoCode" placeholder="Promo code"
-                                   value="" />
-                                <button className="btn btn-secondary" type="submit" id="promoButton">Redeem</button>
+                                   value=""/>
+                            <button className="btn btn-secondary" type="submit" id="promoButton">Redeem</button>
                         </div>
-                        <div id="alertPlaceHolder"></div>
+                        <div id="alertPlaceHolder"/>
                     </form>
                 </div>
                 <div className="col-md-7 col-lg-8">
@@ -71,52 +71,52 @@ class CheckoutComponent extends React.Component {
                             <div className="col-sm-6">
                                 <label htmlFor="firstName" className="form-label">First Name</label>
                                 <input type="text" className="form-control" id="firstName" placeholder="" value=""
-                                       required />
-                                    <div className="invalid-feedback">
-                                        Valid first name is required.
-                                    </div>
+                                       required/>
+                                <div className="invalid-feedback">
+                                    Valid first name is required.
+                                </div>
                             </div>
                             <div className="col-sm-6">
                                 <label htmlFor="lastName" className="form-label">Last Name</label>
                                 <input type="text" className="form-control" id="lastName" placeholder="" value=""
-                                       required />
-                                    <div className="invalid-feedback">
-                                        Valid last name is required.
-                                    </div>
+                                       required/>
+                                <div className="invalid-feedback">
+                                    Valid last name is required.
+                                </div>
                             </div>
                             <div className="col-12">
                                 <label htmlFor="username" className="form-label">Username</label>
                                 <div className="input-group has-validation">
                                     <span className="input-group-text">@</span>
                                     <input type="text" className="form-control" id="username" placeholder="Username"
-                                           value="" required />
-                                        <div className="invalid-feedback">
-                                            Your username is required.
-                                        </div>
+                                           value="" required/>
+                                    <div className="invalid-feedback">
+                                        Your username is required.
+                                    </div>
                                 </div>
                             </div>
                             <div className="col-12">
                                 <label htmlFor="email" className="form-label">Email <span
                                     className="text-muted">(Optional)</span></label>
                                 <input type="email" className="form-control" id="email" placeholder="you@example.com"
-                                       value="" />
-                                    <div className="invalid-feedback">
-                                        Please enter a valid email address for shipping updates.
-                                    </div>
+                                       value=""/>
+                                <div className="invalid-feedback">
+                                    Please enter a valid email address for shipping updates.
+                                </div>
                             </div>
                             <div className="col-12">
                                 <label htmlFor="address" className="form-label">Address</label>
                                 <input type="text" className="form-control" id="address" placeholder="1234 Main St"
-                                       value="" required />
-                                    <div className="invalid-feedback">
-                                        Please enter your shipping address.
-                                    </div>
+                                       value="" required/>
+                                <div className="invalid-feedback">
+                                    Please enter your shipping address.
+                                </div>
                             </div>
                             <div className="col-12">
                                 <label htmlFor="address2" className="form-label">Address 2 <span
                                     className="text-muted">(Optional)</span></label>
                                 <input type="text" className="form-control" id="address2"
-                                       placeholder="Apartment or suite" value="" />
+                                       placeholder="Apartment or suite" value=""/>
                             </div>
                             <div className="col-md-5">
                                 <label htmlFor="country" className="form-label">Country</label>
@@ -141,94 +141,94 @@ class CheckoutComponent extends React.Component {
                             <div className="col-md-3">
                                 <label htmlFor="zipcode" className="form-label">Zip</label>
                                 <input type="number" className="form-control" id="zipcode" placeholder="" value=""
-                                       required />
-                                    <div className="invalid-feedback">
-                                        Zip code required.
-                                    </div>
+                                       required/>
+                                <div className="invalid-feedback">
+                                    Zip code required.
+                                </div>
                             </div>
                         </div>
 
-                        <hr className="my-4" />
+                        <hr className="my-4"/>
 
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="sameShippingAddress" />
-                                    <label htmlFor="sameShippingAddress" className="form-check-label">Shipping address
-                                        is the same as my billing address.</label>
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" id="sameShippingAddress"/>
+                            <label htmlFor="sameShippingAddress" className="form-check-label">Shipping address
+                                is the same as my billing address.</label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="checkbox" id="saveInfo"/>
+                            <label htmlFor="saveInfo" className="form-check-label">Save this information for
+                                next time.</label>
+                        </div>
+
+                        <hr className="my-4"/>
+
+                        <h4 className="mb-3">Payment</h4>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" name="creditCard" id="creditCard"
+                                   checked required/>
+                            <label htmlFor="creditCard" className="form-check-label">
+                                Credit Card
+                            </label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" name="creditCard" id="debitCard"
+                                   required/>
+                            <label htmlFor="debitCard" className="form-check-label">
+                                Debit Card
+                            </label>
+                        </div>
+                        <div className="form-check">
+                            <input className="form-check-input" type="radio" name="creditCard" id="paypal"
+                                   required/>
+                            <label htmlFor="paypal" className="form-check-label">
+                                PayPal
+                            </label>
+                        </div>
+
+                        <div className="row g-3">
+                            <div className="col-sm-6">
+                                <label htmlFor="ccName" className="form-label">Name on card</label>
+                                <input type="text" className="form-control" id="ccName" placeholder="" value=""
+                                       required/>
+                                <div className="form-text">
+                                    Full name as displayed on card.
+                                </div>
+                                <div className="invalid-feedback">
+                                    Name on card is required.
+                                </div>
                             </div>
-                            <div className="form-check">
-                                <input className="form-check-input" type="checkbox" id="saveInfo" />
-                                    <label htmlFor="saveInfo" className="form-check-label">Save this information for
-                                        next time.</label>
+                            <div className="col-sm-6">
+                                <label htmlFor="ccNumber" className="form-label">Card Number</label>
+                                <input type="number" className="form-control" id="ccNumber" placeholder=""
+                                       value="" required/>
+                                <div className="invalid-feedback">
+                                    Card number is required.
+                                </div>
                             </div>
-
-                            <hr className="my-4" />
-
-                                <h4 className="mb-3">Payment</h4>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="creditCard" id="creditCard"
-                                           checked required />
-                                        <label htmlFor="creditCard" className="form-check-label">
-                                            Credit Card
-                                        </label>
+                            <div className="col-sm-3">
+                                <label htmlFor="ccExpiration" className="form-label">Expiration</label>
+                                <input type="text" id="ccExpiration" className="form-control" placeholder=""
+                                       value="" required/>
+                                <div className="invalid-feedback">
+                                    Expiration date required.
                                 </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="creditCard" id="debitCard"
-                                           required />
-                                        <label htmlFor="debitCard" className="form-check-label">
-                                            Debit Card
-                                        </label>
+                            </div>
+                            <div className="col-sm-3">
+                                <label htmlFor="ccSecurity" className="form-label">CVV</label>
+                                <input type="number" className="form-control" id="ccSecurity" placeholder=""
+                                       value="" required/>
+                                <div className="invalid-feedback">
+                                    Security code is required.
                                 </div>
-                                <div className="form-check">
-                                    <input className="form-check-input" type="radio" name="creditCard" id="paypal"
-                                           required />
-                                        <label htmlFor="paypal" className="form-check-label">
-                                            PayPal
-                                        </label>
-                                </div>
+                            </div>
+                        </div>
 
-                                <div className="row g-3">
-                                    <div className="col-sm-6">
-                                        <label htmlFor="ccName" className="form-label">Name on card</label>
-                                        <input type="text" className="form-control" id="ccName" placeholder="" value=""
-                                               required />
-                                            <div className="form-text">
-                                                Full name as displayed on card.
-                                            </div>
-                                            <div className="invalid-feedback">
-                                                Name on card is required.
-                                            </div>
-                                    </div>
-                                    <div className="col-sm-6">
-                                        <label htmlFor="ccNumber" className="form-label">Card Number</label>
-                                        <input type="number" className="form-control" id="ccNumber" placeholder=""
-                                               value="" required />
-                                            <div className="invalid-feedback">
-                                                Card number is required.
-                                            </div>
-                                    </div>
-                                    <div className="col-sm-3">
-                                        <label htmlFor="ccExpiration" className="form-label">Expiration</label>
-                                        <input type="text" id="ccExpiration" className="form-control" placeholder=""
-                                               value="" required />
-                                            <div className="invalid-feedback">
-                                                Expiration date required.
-                                            </div>
-                                    </div>
-                                    <div className="col-sm-3">
-                                        <label htmlFor="ccSecurity" className="form-label">CVV</label>
-                                        <input type="number" className="form-control" id="ccSecurity" placeholder=""
-                                               value="" required />
-                                            <div className="invalid-feedback">
-                                                Security code is required.
-                                            </div>
-                                    </div>
-                                </div>
+                        <hr className="my-4"/>
 
-                                <hr className="my-4" />
-
-                                <button className="col-12 btn btn-primary btn-lg" type="submit">Continue to
-                                    checkout
-                                </button>
+                        <button className="col-12 btn btn-primary btn-lg" type="submit">Continue to
+                            checkout
+                        </button>
                     </form>
                 </div>
             </div>
