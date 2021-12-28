@@ -1,7 +1,6 @@
 import React from "react";
 import {
   IonButton,
-  IonButtons,
   IonContent,
   IonHeader,
   IonIcon,
@@ -19,7 +18,7 @@ const RollCalls: React.FC = () => {
       <IonHeader>
         <IonToolbar color={"purple"}>
           <IonTitle>Roll Calls</IonTitle>
-          <IonButton slot={"end"}>
+          <IonButton id={"initRollCallButton"} slot={"end"}>
             Initiate Roll Calls
             <IonIcon slot={"start"} ios={add} md={add} />
           </IonButton>

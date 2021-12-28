@@ -1,5 +1,5 @@
 @media screen and (max-width: 900px) {
-  ion-header {
+  ion-header ion-toolbar ion-title.center-sm {
     text-align: center;
     align-content: center;
   }

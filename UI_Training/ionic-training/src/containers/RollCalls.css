@@ -1,1 +1,6 @@
-
+#initRollCallButton {
+  --background: var(--ion-color-purple-shade);
+  --box-shadow: 0px;
+  margin-right: 10px;
+  text-transform: none;
+}
