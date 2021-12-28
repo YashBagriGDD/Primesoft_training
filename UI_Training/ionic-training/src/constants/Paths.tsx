@@ -12,6 +12,7 @@ import {
 } from "ionicons/icons";
 import TabbedLayout from "../components/Layouts/TabbedLayout";
 import { RouteInterface } from "../interfaces/interfaces";
+import RollCalls from "../containers/RollCalls";
 
 export const Paths: RouteInterface[] = [
   {
@@ -29,7 +30,7 @@ export const Paths: RouteInterface[] = [
   },
   {
     path: "/rollcalls",
-    component: MyPage,
+    component: RollCalls,
     name: "Roll Calls",
     icon: listOutline,
   },

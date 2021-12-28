@@ -6,6 +6,7 @@ ion-menu ion-content {
 ion-menu ion-list-header {
   --background: var(--ion-color-primary-contrast);
   --ion-text-color: var(--ion-color-warning-contrast);
+  max-height: 56px;
 }
 
 ion-menu ion-item {
@@ -39,10 +40,11 @@ ion-item.selected ion-icon {
 
 .view-profile {
   color: var(--ion-color-purple-tint);
-  font-size: medium;
+  font-size: 12px;
 }
 
 .username {
-  padding-bottom: 3px;
+  padding-bottom: 0px;
   text-transform: capitalize;
+  font-size: 16px;
 }

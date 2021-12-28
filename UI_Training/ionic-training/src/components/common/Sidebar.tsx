@@ -49,14 +49,7 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
         <IonList>
           <IonListHeader>
             <div className="flexbox ion-align-items-center ion-nowrap ion-padding">
-              <div>
-                <IonIcon
-                  ios={person}
-                  md={person}
-                  size="large"
-                  color="primary"
-                />
-              </div>
+              <IonIcon ios={person} md={person} size="large" color="medium" />
               <div className="ion-align-items-stretch ion-wrap">
                 <IonTitle className="username">{props.username}</IonTitle>
                 <IonTitle className="view-profile">View Profile</IonTitle>
