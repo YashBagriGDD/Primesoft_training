@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   IonButton,
   IonContent,
@@ -9,10 +9,40 @@ import {
 } from "@ionic/react";
 import { add } from "ionicons/icons";
 import RollCallCard from "../components/common/RollCallCard";
+import { useDispatch, useSelector } from "react-redux";
+import { GetCards } from "../redux/actions";
+import { PostsState, RollCallCardInterface } from "../interfaces/interfaces";
 
 import "./RollCalls.css";
 
+//TODO: Style buttons properly
 const RollCalls: React.FC = () => {
+  const post = useSelector<PostsState, PostsState["posts"]>(
+    (state) => state.posts
+  );
+
+  const dispatch = useDispatch();
+
+  const data = require("../constants/RollCalls.json");
+
+  useEffect(() => {
+    dispatch(GetCards(data.rollCalls));
+  }, []);
+
+  console.log(post);
+
+  const postsList = () =>
+    post?.list?.map((item: RollCallCardInterface, index) => (
+      <RollCallCard
+        key={index}
+        state={item.state}
+        billNum={item.billNum}
+        name={item.name}
+        endDate={item.endDate}
+        isSoftRollCall={item.isSoftRollCall}
+      />
+    ));
+
   return (
     <IonContent>
       {/* Header */}
@@ -26,15 +56,7 @@ const RollCalls: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <div className={"container"}>
-        <RollCallCard
-          state="IL"
-          billNum="1232442"
-          name="Joe"
-          endDate="12/16/2004"
-          isSoftRollCall={true}
-        />
-      </div>
+      <div className={"container"}>{postsList()}</div>
     </IonContent>
   );
 };
