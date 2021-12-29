@@ -22,7 +22,7 @@ interface Props {
 const Carousel: React.FC<Props> = (props) => {
   let slideItems;
 
-  if (props.type.toLowerCase() == "card") {
+  if (props.type.toLowerCase() === "card") {
     slideItems = props.cardData?.map((item, index) => (
       <SwiperSlide key={index}>
         <Card
@@ -33,7 +33,7 @@ const Carousel: React.FC<Props> = (props) => {
         />
       </SwiperSlide>
     ));
-  } else if (props.type.toLowerCase() == "img") {
+  } else if (props.type.toLowerCase() === "img") {
     slideItems = props.imgData?.map((item, index) => (
       <SwiperSlide key={index}>
         <img src={item} alt={`Carousel item ${index}`} />

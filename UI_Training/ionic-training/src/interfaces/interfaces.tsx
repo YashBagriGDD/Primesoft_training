@@ -11,3 +11,11 @@ export interface RouteInterface {
   icon: string;
   sidebarRender?: boolean;
 }
+
+export interface RollCallCardInterface {
+  state: string;
+  bill: string;
+  name: string;
+  endDate: string;
+  isSoftRollCall?: boolean;
+}
