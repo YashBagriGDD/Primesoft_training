@@ -14,7 +14,7 @@ export interface RouteInterface {
 
 export interface RollCallCardInterface {
   state: string;
-  bill: string;
+  billNum: string;
   name: string;
   endDate: string;
   isSoftRollCall?: boolean;

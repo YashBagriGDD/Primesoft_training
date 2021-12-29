@@ -8,6 +8,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { add } from "ionicons/icons";
+import RollCallCard from "../components/common/RollCallCard";
 
 import "./RollCalls.css";
 
@@ -18,14 +19,22 @@ const RollCalls: React.FC = () => {
       <IonHeader>
         <IonToolbar color={"purple"}>
           <IonTitle>Roll Calls</IonTitle>
-          <IonButton id={"initRollCallButton"} slot={"end"}>
+          <IonButton id={"init-roll-call-button"} slot={"end"}>
             Initiate Roll Calls
             <IonIcon slot={"start"} ios={add} md={add} />
           </IonButton>
         </IonToolbar>
       </IonHeader>
 
-      <IonTitle size={"large"}>Roll Calls!</IonTitle>
+      <div className={"container"}>
+        <RollCallCard
+          state="IL"
+          billNum="1232442"
+          name="Joe"
+          endDate="12/16/2004"
+          isSoftRollCall={true}
+        />
+      </div>
     </IonContent>
   );
 };
