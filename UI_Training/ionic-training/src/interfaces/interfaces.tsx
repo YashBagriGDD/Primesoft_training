@@ -19,3 +19,13 @@ export interface RollCallCardInterface {
   endDate: string;
   isSoftRollCall?: boolean;
 }
+
+export type CardState = {
+  list: RollCallCardInterface[];
+};
+
+export type PostsState = {
+  posts: {
+    list: RollCallCardInterface[];
+  };
+};

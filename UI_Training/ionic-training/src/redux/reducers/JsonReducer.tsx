@@ -1,15 +1,12 @@
-type Actions =
-    | {type: "BUILD", payload: HTMLObjectElement[]};
+import { CardState, RollCallCardInterface } from "../../interfaces/interfaces";
 
-type State = {
-    list: HTMLObjectElement[]
+type Actions = { type: "BUILD"; payload: RollCallCardInterface[] };
+
+export default (state: CardState = { list: [] }, action: Actions) => {
+  switch (action.type) {
+    case "BUILD":
+      return { ...state, list: action.payload };
+    default:
+      return state;
+  }
 };
-
-export default (state: State = {list: []}, action: Actions) => {
-    switch (action.type) {
-        case "BUILD":
-            return {...state, list: action.payload};
-        default:
-            return state;
-    }
-}

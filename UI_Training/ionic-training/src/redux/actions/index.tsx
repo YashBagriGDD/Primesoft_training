@@ -1,8 +1,8 @@
-export const GetCardsFromJson = (jsonItem: string) => {
-  let parsedJson = JSON.parse(jsonItem);
+import { RollCallCardInterface } from "../../interfaces/interfaces";
 
+export const GetCards = (jsonItem: RollCallCardInterface[]) => {
   return {
     type: "BUILD",
-    payload: parsedJson,
+    payload: jsonItem,
   };
 };
