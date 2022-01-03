@@ -14,10 +14,11 @@ import { GetCards } from "../redux/actions";
 import { PostsState, RollCallCardInterface } from "../interfaces/interfaces";
 
 import "./RollCalls.css";
+import { RootState } from "..";
 
 //TODO: Style buttons properly
 const RollCalls: React.FC = () => {
-  const post = useSelector<PostsState, PostsState["posts"]>(
+  const post = useSelector<RootState, PostsState["posts"]>(
     (state) => state.posts
   );
 

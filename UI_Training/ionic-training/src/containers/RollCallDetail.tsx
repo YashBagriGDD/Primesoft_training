@@ -11,6 +11,7 @@ import { chevronBack } from "ionicons/icons";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
+import { RootState } from "..";
 import { PostsState } from "../interfaces/interfaces";
 import { GetCards } from "../redux/actions";
 
@@ -23,16 +24,14 @@ interface RollCallParams {
 const RollCallDetail: React.FC = () => {
   const { index } = useParams<RollCallParams>();
 
-  const posts = useSelector<PostsState, PostsState["posts"]>(
+  const posts = useSelector<RootState, PostsState["posts"]>(
     (state) => state.posts
   );
-
-  const dispatch = useDispatch();
 
   const currentRollCall = posts.list[parseInt(index)];
 
   useEffect(() => {
-    dispatch(GetCards([]));
+    console.log(index);
     console.log(posts);
     console.log(currentRollCall);
   }, []);
