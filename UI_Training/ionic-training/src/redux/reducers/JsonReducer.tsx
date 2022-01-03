@@ -1,11 +1,13 @@
 import { CardState, RollCallCardInterface } from "../../interfaces/interfaces";
 
-type Actions = { type: "BUILD"; payload: RollCallCardInterface[] };
+type Actions = { type: "BUILD" | "GET"; payload?: RollCallCardInterface[] };
 
 export default (state: CardState = { list: [] }, action: Actions) => {
   switch (action.type) {
     case "BUILD":
       return { ...state, list: action.payload };
+    case "GET":
+      return state;
     default:
       return state;
   }
