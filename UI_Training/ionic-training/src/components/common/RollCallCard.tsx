@@ -9,7 +9,6 @@ import {
   IonRow,
 } from "@ionic/react";
 import React from "react";
-import { RollCallCardInterface } from "../../interfaces/interfaces";
 
 import "./RollCallCard.css";
 
@@ -49,16 +48,16 @@ const RollCallCard: React.FC<RollCallCardProps> = (props) => {
       <IonGrid>
         <IonRow>
           <IonCol size="6">
-            <IonButton
-              expand={"full"}
-              fill={"clear"}
-              href={`/rollcalls/${props.index}`}
-            >
+            <IonButton expand={"full"} fill={"clear"}>
               View Bill
             </IonButton>
           </IonCol>
           <IonCol size="6">
-            <IonButton expand={"full"} fill={"clear"}>
+            <IonButton
+              expand={"full"}
+              fill={"clear"}
+              routerLink={`/rollcalls/${props.index}`}
+            >
               View Roll Call
             </IonButton>
           </IonCol>

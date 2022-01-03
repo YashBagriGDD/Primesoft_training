@@ -21,10 +21,6 @@ export interface RollCallCardInterface {
   summary?: string;
 }
 
-export type CardState = {
-  list: RollCallCardInterface[];
-};
-
 export type PostsState = {
   posts: {
     list: RollCallCardInterface[];

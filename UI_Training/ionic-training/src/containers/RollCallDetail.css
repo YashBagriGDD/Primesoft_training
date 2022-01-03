@@ -1,0 +1,7 @@
+ion-header ion-toolbar ion-buttons ion-back-button {
+  margin: 0px;
+}
+
+.center-text {
+  text-align: center;
+}

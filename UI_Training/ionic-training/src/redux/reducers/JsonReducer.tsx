@@ -1,8 +1,16 @@
-import { CardState, RollCallCardInterface } from "../../interfaces/interfaces";
+import { RollCallCardInterface } from "../../interfaces/interfaces";
 
-type Actions = { type: "BUILD" | "GET"; payload?: RollCallCardInterface[] };
+type State = {
+  list: RollCallCardInterface[];
+};
 
-export default (state: CardState = { list: [] }, action: Actions) => {
+const defaultState: State = {
+  list: [],
+};
+
+type Actions = { type: "BUILD"; payload: RollCallCardInterface[] };
+
+const JsonReducer = (state: State = defaultState, action: Actions) => {
   switch (action.type) {
     case "BUILD":
       return { ...state, list: action.payload };
@@ -10,3 +18,5 @@ export default (state: CardState = { list: [] }, action: Actions) => {
       return state;
   }
 };
+
+export default JsonReducer;

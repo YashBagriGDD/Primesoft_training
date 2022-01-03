@@ -29,11 +29,11 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
         {Routes()}
-        {/* <Route
+        <Route
           path={"/rollcalls/:index"}
           exact={true}
           component={RollCallDetail}
-        /> */}
+        />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

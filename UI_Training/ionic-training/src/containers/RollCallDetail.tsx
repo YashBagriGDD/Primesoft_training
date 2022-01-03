@@ -9,13 +9,12 @@ import {
 } from "@ionic/react";
 import { chevronBack } from "ionicons/icons";
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { RootState } from "..";
 import { PostsState } from "../interfaces/interfaces";
-import { GetCards } from "../redux/actions";
 
-import "./RollCalls.css";
+import "./RollCallDetail.css";
 
 interface RollCallParams {
   index: string;
@@ -37,26 +36,28 @@ const RollCallDetail: React.FC = () => {
   }, []);
 
   return (
-    <IonContent>
-      <IonHeader>
-        <IonToolbar color="purple">
-          <IonButtons slot="start">
-            <IonBackButton
-              defaultHref="/rollcalls"
-              icon={chevronBack}
-              text={""}
-            />
-          </IonButtons>
-          <IonTitle>View Roll Call</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+    <IonPage id="details">
+      <IonContent>
+        <IonHeader>
+          <IonToolbar color="purple">
+            <IonButtons slot="start">
+              <IonBackButton
+                defaultHref="/rollcalls"
+                icon={chevronBack}
+                text={""}
+              />
+            </IonButtons>
+            <IonTitle className={"center-text"}>View Roll Call</IonTitle>
+          </IonToolbar>
+        </IonHeader>
 
-      <div>
-        {/* <p>{currentRollCall.state}</p>
-        <p>{currentRollCall.billNum}</p>
-        <p>{currentRollCall.name}</p> */}
-      </div>
-    </IonContent>
+        <div>
+          <p>{currentRollCall.state}</p>
+          <p>{currentRollCall.billNum}</p>
+          <p>{currentRollCall.name}</p>
+        </div>
+      </IonContent>
+    </IonPage>
   );
 };
 

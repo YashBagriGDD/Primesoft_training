@@ -35,13 +35,13 @@ export const Paths: RouteInterface[] = [
     name: "Roll Calls",
     icon: listOutline,
   },
-  {
-    path: "/rollcalls/:index",
-    component: RollCallDetail,
-    name: "Roll Call Detail",
-    icon: listOutline,
-    sidebarRender: false,
-  },
+  // {
+  //   path: "/rollcalls/:index",
+  //   component: RollCallDetail,
+  //   name: "Roll Call Detail",
+  //   icon: listOutline,
+  //   sidebarRender: false,
+  // },
   {
     path: "/lobbyists",
     component: Explore,
