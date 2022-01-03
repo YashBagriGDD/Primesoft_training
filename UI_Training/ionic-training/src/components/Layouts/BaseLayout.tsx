@@ -11,7 +11,6 @@ const BaseLayout: React.FC = ({ children }) => {
       <IonPage id="main-content">
         <Header title={"eRollCall"} />
         {children}
-        <Footer />
       </IonPage>
     </div>
   );

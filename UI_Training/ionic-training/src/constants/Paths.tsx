@@ -13,6 +13,7 @@ import {
 import TabbedLayout from "../components/Layouts/TabbedLayout";
 import { RouteInterface } from "../interfaces/interfaces";
 import RollCalls from "../containers/RollCalls";
+import RollCallDetail from "../containers/RollCallDetail";
 
 export const Paths: RouteInterface[] = [
   {
@@ -33,6 +34,13 @@ export const Paths: RouteInterface[] = [
     component: RollCalls,
     name: "Roll Calls",
     icon: listOutline,
+  },
+  {
+    path: "/rollcalls/:index",
+    component: RollCallDetail,
+    name: "Roll Call Detail",
+    icon: listOutline,
+    sidebarRender: false,
   },
   {
     path: "/lobbyists",

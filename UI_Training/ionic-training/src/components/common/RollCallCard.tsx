@@ -4,13 +4,25 @@ import {
   IonCardContent,
   IonCardSubtitle,
   IonCardTitle,
+  IonCol,
+  IonGrid,
+  IonRow,
 } from "@ionic/react";
 import React from "react";
 import { RollCallCardInterface } from "../../interfaces/interfaces";
 
 import "./RollCallCard.css";
 
-const RollCallCard: React.FC<RollCallCardInterface> = (props) => {
+interface RollCallCardProps {
+  state: string;
+  billNum: string;
+  name: string;
+  endDate: string;
+  isSoftRollCall?: boolean;
+  index: number;
+}
+
+const RollCallCard: React.FC<RollCallCardProps> = (props) => {
   return (
     <IonCard>
       {props.isSoftRollCall ? (
@@ -34,14 +46,24 @@ const RollCallCard: React.FC<RollCallCardInterface> = (props) => {
           </IonCardTitle>
         </IonCardContent>
       </div>
-      <div className={"flexbox ion-nowrap ion-align-items-stretch"}>
-        <IonButton expand={"full"} fill={"clear"}>
-          View Bill
-        </IonButton>
-        <IonButton expand={"full"} fill={"clear"}>
-          View Roll Call
-        </IonButton>
-      </div>
+      <IonGrid>
+        <IonRow>
+          <IonCol size="6">
+            <IonButton
+              expand={"full"}
+              fill={"clear"}
+              href={`/rollcalls/${props.index}`}
+            >
+              View Bill
+            </IonButton>
+          </IonCol>
+          <IonCol size="6">
+            <IonButton expand={"full"} fill={"clear"}>
+              View Roll Call
+            </IonButton>
+          </IonCol>
+        </IonRow>
+      </IonGrid>
     </IonCard>
   );
 };

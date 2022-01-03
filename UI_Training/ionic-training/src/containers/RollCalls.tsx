@@ -29,8 +29,6 @@ const RollCalls: React.FC = () => {
     dispatch(GetCards(data.rollCalls));
   }, []);
 
-  console.log(post);
-
   const postsList = () =>
     post?.list?.map((item: RollCallCardInterface, index) => (
       <RollCallCard
@@ -40,6 +38,7 @@ const RollCalls: React.FC = () => {
         name={item.name}
         endDate={item.endDate}
         isSoftRollCall={item.isSoftRollCall}
+        index={index}
       />
     ));
 

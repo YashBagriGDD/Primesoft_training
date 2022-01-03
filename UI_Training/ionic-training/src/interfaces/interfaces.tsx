@@ -18,6 +18,7 @@ export interface RollCallCardInterface {
   name: string;
   endDate: string;
   isSoftRollCall?: boolean;
+  summary?: string;
 }
 
 export type CardState = {
