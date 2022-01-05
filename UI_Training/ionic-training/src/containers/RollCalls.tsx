@@ -15,6 +15,7 @@ import { PostsState, RollCallCardInterface } from "../interfaces/interfaces";
 
 import "./RollCalls.css";
 import { RootState } from "..";
+import ErrorAlert from "../components/common/ErrorAlert";
 
 //TODO: Style buttons properly
 const RollCalls: React.FC = () => {
@@ -55,6 +56,8 @@ const RollCalls: React.FC = () => {
           </IonButton>
         </IonToolbar>
       </IonHeader>
+
+      <ErrorAlert errorCode="403" />
 
       <div className={"container"}>{postsList()}</div>
     </IonContent>

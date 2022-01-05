@@ -43,20 +43,20 @@ const RollCallDetail: React.FC = () => {
 
   return (
     <IonPage id="details">
-      <IonContent>
-        <IonHeader>
-          <IonToolbar color="purple">
-            <IonButtons slot="start">
-              <IonBackButton
-                defaultHref="/rollcalls"
-                icon={chevronBack}
-                text={""}
-              />
-            </IonButtons>
-            <IonTitle className={"center-text"}>View Roll Call</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+      <IonHeader>
+        <IonToolbar color="purple">
+          <IonButtons slot="start">
+            <IonBackButton
+              defaultHref="/rollcalls"
+              icon={chevronBack}
+              text={""}
+            />
+          </IonButtons>
+          <IonTitle className={"center-text"}>View Roll Call</IonTitle>
+        </IonToolbar>
+      </IonHeader>
 
+      <IonContent>
         <IonGrid className={"ion-padding"}>
           <IonRow>
             <IonCol>
@@ -125,6 +125,7 @@ const RollCallDetail: React.FC = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
+
       <IonFooter>
         <IonToolbar>
           <IonGrid>
