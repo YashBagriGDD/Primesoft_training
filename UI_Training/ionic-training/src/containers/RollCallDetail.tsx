@@ -56,74 +56,70 @@ const RollCallDetail: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
-        <IonGrid className={"ion-padding"}>
-          <IonRow>
-            <IonCol>
-              <IonCard color={"medium"}>
-                <IonCardSubtitle>
-                  <span>State - Bill Number</span>
-                </IonCardSubtitle>
-                <IonCardTitle>
-                  <span>
-                    {currentRollCall.state} - {currentRollCall.billNum}
-                  </span>
-                </IonCardTitle>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol>
-              <IonCard>
-                <IonCardSubtitle>
-                  <span>Enter Test Roll Call Name</span>
-                </IonCardSubtitle>
-                <IonCardTitle>
-                  <span>{currentRollCall.name}</span>
-                </IonCardTitle>
-                <IonButton slot="end" color={"purple"}>
-                  <IonIcon icon={pencil} />
-                </IonButton>
-              </IonCard>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonList>
-              <IonItem>
-                <IonLabel>
-                  <span>Summary</span>
-                </IonLabel>
-                <IonButton slot="end" fill="clear">
-                  <IonIcon icon={chevronForward} />
-                </IonButton>
-              </IonItem>
-              <IonItem>
-                <IonLabel>
-                  <span>View Location</span>
-                </IonLabel>
-                <IonButton slot="end" color="purple" shape="round">
-                  <IonIcon icon={pencil} />
-                </IonButton>
-              </IonItem>
-              <IonItem>
-                <IonLabel>
-                  <span>Assign Lobbyists</span>
-                </IonLabel>
-                <IonButton slot="end" color="purple" shape="round">
-                  <IonIcon icon={pencil} />
-                </IonButton>
-              </IonItem>
-              <IonItem>
-                <IonLabel>
-                  <span>View Timeline</span>
-                </IonLabel>
-                <IonButton slot="end" color="purple" shape="round">
-                  <IonIcon icon={pencil} />
-                </IonButton>
-              </IonItem>
-            </IonList>
-          </IonRow>
-        </IonGrid>
+      <IonContent className="ion-padding">
+        <div>
+          <IonCard color={"medium"}>
+            <IonCardSubtitle>
+              <span>State - Bill Number</span>
+            </IonCardSubtitle>
+            <IonCardTitle>
+              <span>
+                {currentRollCall.state} - {currentRollCall.billNum}
+              </span>
+            </IonCardTitle>
+          </IonCard>
+        </div>
+
+        <div>
+          <IonCard>
+            <IonCardSubtitle>
+              <span>Enter Test Roll Call Name</span>
+            </IonCardSubtitle>
+            <IonCardTitle>
+              <span>{currentRollCall.name}</span>
+            </IonCardTitle>
+            <IonButton slot="end" color={"purple"}>
+              <IonIcon icon={pencil} />
+            </IonButton>
+          </IonCard>
+        </div>
+
+        <div>
+          <IonList>
+            <IonItem>
+              <IonLabel>
+                <span>Summary</span>
+              </IonLabel>
+              <IonButton slot="end" fill="clear">
+                <IonIcon icon={chevronForward} />
+              </IonButton>
+            </IonItem>
+            <IonItem>
+              <IonLabel>
+                <span>View Location</span>
+              </IonLabel>
+              <IonButton slot="end" color="purple" shape="round">
+                <IonIcon icon={pencil} />
+              </IonButton>
+            </IonItem>
+            <IonItem>
+              <IonLabel>
+                <span>Assign Lobbyists</span>
+              </IonLabel>
+              <IonButton slot="end" color="purple" shape="round">
+                <IonIcon icon={pencil} />
+              </IonButton>
+            </IonItem>
+            <IonItem>
+              <IonLabel>
+                <span>View Timeline</span>
+              </IonLabel>
+              <IonButton slot="end" color="purple" shape="round">
+                <IonIcon icon={pencil} />
+              </IonButton>
+            </IonItem>
+          </IonList>
+        </div>
       </IonContent>
 
       <IonFooter>
@@ -131,14 +127,18 @@ const RollCallDetail: React.FC = () => {
           <IonGrid>
             <IonRow>
               <IonCol size="6">
-                <IonButton fill="outline" color="purple">
-                  Delete
-                </IonButton>
+                <div className="ion-float-right">
+                  <IonButton fill="outline" color="purple">
+                    Delete
+                  </IonButton>
+                </div>
               </IonCol>
               <IonCol size="6">
-                <IonButton fill="solid" color="purple" disabled={true}>
-                  Initiated
-                </IonButton>
+                <div className="ion-float-left">
+                  <IonButton fill="solid" color="purple" disabled={true}>
+                    Initiated
+                  </IonButton>
+                </div>
               </IonCol>
             </IonRow>
           </IonGrid>

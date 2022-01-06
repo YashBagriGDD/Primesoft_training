@@ -1,5 +1,14 @@
+ion-content div ion-card {
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
 ion-header ion-toolbar ion-buttons ion-back-button {
   margin: 0px;
+}
+
+ion-list ion-item {
+  padding-bottom: 10px;
 }
 
 .center-text {

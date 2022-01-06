@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
 import {
   IonButton,
+  IonCol,
   IonContent,
+  IonGrid,
   IonHeader,
   IonIcon,
+  IonRow,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -29,19 +32,20 @@ const RollCalls: React.FC = () => {
 
   useEffect(() => {
     dispatch(GetCards(data.rollCalls));
-  }, []);
+  }, [data.rollCalls, dispatch]);
 
   const postsList = () =>
     post?.list?.map((item: RollCallCardInterface, index) => (
-      <RollCallCard
-        key={index}
-        state={item.state}
-        billNum={item.billNum}
-        name={item.name}
-        endDate={item.endDate}
-        isSoftRollCall={item.isSoftRollCall}
-        index={index}
-      />
+      <IonCol key={index} size="12" sizeMd="4">
+        <RollCallCard
+          state={item.state}
+          billNum={item.billNum}
+          name={item.name}
+          endDate={item.endDate}
+          isSoftRollCall={item.isSoftRollCall}
+          index={index}
+        />
+      </IonCol>
     ));
 
   return (
@@ -57,9 +61,11 @@ const RollCalls: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <ErrorAlert errorCode="403" />
+      <ErrorAlert errorCode="403" message="Opps, Something went wrong." />
 
-      <div className={"container"}>{postsList()}</div>
+      <IonGrid>
+        <IonRow>{postsList()}</IonRow>
+      </IonGrid>
     </IonContent>
   );
 };
