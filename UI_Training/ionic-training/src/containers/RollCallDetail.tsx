@@ -46,11 +46,7 @@ const RollCallDetail: React.FC = () => {
       <IonHeader>
         <IonToolbar color="purple">
           <IonButtons slot="start">
-            <IonBackButton
-              defaultHref="/rollcalls"
-              icon={chevronBack}
-              text={""}
-            />
+            <IonBackButton icon={chevronBack} text={""} />
           </IonButtons>
           <IonTitle className={"center-text"}>View Roll Call</IonTitle>
         </IonToolbar>
