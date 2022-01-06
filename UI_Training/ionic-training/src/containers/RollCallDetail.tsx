@@ -54,7 +54,7 @@ const RollCallDetail: React.FC = () => {
 
       <IonContent className="ion-padding">
         <div>
-          <IonCard color={"medium"}>
+          <IonCard className="card-padding" color={"medium"}>
             <IonCardSubtitle>
               <span>State - Bill Number</span>
             </IonCardSubtitle>
@@ -67,7 +67,7 @@ const RollCallDetail: React.FC = () => {
         </div>
 
         <div>
-          <IonCard>
+          <IonCard className="card-padding">
             <IonCardSubtitle>
               <span>Enter Test Roll Call Name</span>
             </IonCardSubtitle>

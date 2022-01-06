@@ -35,6 +35,20 @@ export const Paths: RouteInterface[] = [
     name: "Roll Calls",
     icon: listOutline,
   },
+  {
+    path: "/initiated",
+    component: RollCalls,
+    name: "Roll Calls",
+    icon: listOutline,
+    sidebarRender: false,
+  },
+  {
+    path: "/closed",
+    component: RollCalls,
+    name: "Roll Calls",
+    icon: listOutline,
+    sidebarRender: false,
+  },
   // {
   //   path: "/rollcalls/:index",
   //   component: RollCallDetail,
