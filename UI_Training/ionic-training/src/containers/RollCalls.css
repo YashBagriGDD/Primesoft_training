@@ -1,5 +1,15 @@
-ion-tabs ion-tab-bar {
-  --border: #000000;
+ion-segment ion-segment-button {
+  --border-color: var(--ion-color-medium);
+  --border-style: solid;
+  border-width: 0px 0px 1px 0px;
+}
+
+ion-segment ion-segment-button ion-label {
+  text-transform: capitalize;
+}
+
+div.segment-padding {
+  padding: 10px;
 }
 
 ion-tabs ion-tab-bar ion-tab-button {

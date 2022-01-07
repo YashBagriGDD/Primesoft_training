@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   IonButton,
   IonCol,
@@ -9,6 +9,8 @@ import {
   IonLabel,
   IonRouterOutlet,
   IonRow,
+  IonSegment,
+  IonSegmentButton,
   IonTabBar,
   IonTabButton,
   IonTabs,
@@ -29,6 +31,8 @@ import "./RollCalls.css";
 
 //TODO: Style buttons properly
 const RollCalls: React.FC = () => {
+  const [tab, setTab] = useState<string | undefined>("non-initiated");
+
   const post = useSelector<RootState, PostsState["posts"]>(
     (state) => state.posts
   );
@@ -55,6 +59,29 @@ const RollCalls: React.FC = () => {
       </IonCol>
     ));
 
+  const tabContent = () => {
+    switch (tab) {
+      case "non-initiated":
+        return (
+          <IonGrid>
+            <IonRow>{postsList()}</IonRow>
+          </IonGrid>
+        );
+      case "initiated":
+        return (
+          <ErrorAlert errorCode="403" message="Opps, Something went wrong." />
+        );
+      case "closed":
+        return (
+          <ErrorAlert errorCode="403" message="Opps, Something went wrong." />
+        );
+      default:
+        return (
+          <ErrorAlert errorCode="403" message="Opps, Something went wrong." />
+        );
+    }
+  };
+
   return (
     <IonContent>
       {/* Header */}
@@ -68,13 +95,32 @@ const RollCalls: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
+      <div className="segment-padding">
+        <IonSegment
+          color={"purple"}
+          onIonChange={(e) => setTab(e.detail.value)}
+        >
+          <IonSegmentButton value="non-initiated">
+            <IonLabel>Non initiated</IonLabel>
+          </IonSegmentButton>
+          <IonSegmentButton value="initated">
+            <IonLabel>Initiated</IonLabel>
+          </IonSegmentButton>
+          <IonSegmentButton value="closed">
+            <IonLabel>Closed</IonLabel>
+          </IonSegmentButton>
+        </IonSegment>
+
+        {tabContent()}
+      </div>
+
       {/* <ErrorAlert errorCode="403" message="Opps, Something went wrong." /> */}
 
       {/* <IonGrid>
         <IonRow>{postsList()}</IonRow>
       </IonGrid> */}
 
-      <div>
+      {/* <div>
         <IonTabs>
           <IonRouterOutlet>
             <Route
@@ -110,7 +156,7 @@ const RollCalls: React.FC = () => {
             </IonTabButton>
           </IonTabBar>
         </IonTabs>
-      </div>
+      </div> */}
     </IonContent>
   );
 };

@@ -21,7 +21,7 @@ const ErrorAlert: React.FC<Props> = (props) => {
   };
 
   return (
-    <div className="ion-wrap error-alert">
+    <div className="ion-padding-top ion-wrap error-alert">
       <div className="ion-nowrap error-flex">
         <IonIcon icon={warning} color={"danger"} size="large" />
         <h2 className="errorCode">{props.errorCode}</h2>
