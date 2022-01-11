@@ -7,6 +7,7 @@ import {
   informationCircleOutline,
   listOutline,
   lockClosedOutline,
+  logInOutline,
   logOutOutline,
   personOutline,
 } from "ionicons/icons";
@@ -14,11 +15,12 @@ import TabbedLayout from "../components/Layouts/TabbedLayout";
 import { RouteInterface } from "../interfaces/interfaces";
 import RollCalls from "../containers/RollCalls";
 import RollCallDetail from "../containers/RollCallDetail";
+import Login from "../containers/Login";
 
 export const Paths: RouteInterface[] = [
   {
     path: "/",
-    component: Home,
+    component: RollCalls,
     name: "Home",
     icon: homeOutline,
     sidebarRender: false,

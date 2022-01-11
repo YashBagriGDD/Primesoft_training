@@ -12,15 +12,18 @@ import {
 import React from "react";
 import { person } from "ionicons/icons";
 import { useLocation } from "react-router-dom";
-import { RouteInterface } from "../../interfaces/interfaces";
+import { PostsState, RouteInterface } from "../../interfaces/interfaces";
+import { useSelector } from "react-redux";
+import { RootState } from "../..";
 
 import "./Sidebar.css";
 interface Props {
   paths: RouteInterface[];
-  username: string;
 }
 
 const NavSidebar: React.FC<Props> = (props: Props) => {
+  const user = useSelector<RootState, PostsState["user"]>((state) => state);
+
   // const sidebarItems = ;
   const location = useLocation();
 
@@ -51,7 +54,9 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
             <div className="flexbox ion-align-items-center ion-nowrap ion-padding">
               <IonIcon ios={person} md={person} size="large" color="medium" />
               <div className="ion-align-items-stretch ion-wrap">
-                <IonTitle className="username">{props.username}</IonTitle>
+                <IonTitle className="username">
+                  {user.username ? user.username : "Username"}
+                </IonTitle>
                 <IonTitle className="view-profile">View Profile</IonTitle>
               </div>
             </div>

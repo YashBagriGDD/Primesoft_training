@@ -1,0 +1,8 @@
+ion-content.login {
+  display: flex;
+  flex-direction: column;
+}
+
+.login > ion-segment ion-segment-button ion-label {
+  text-transform: none;
+}

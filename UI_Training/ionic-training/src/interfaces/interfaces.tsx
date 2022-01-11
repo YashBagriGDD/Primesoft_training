@@ -25,4 +25,9 @@ export type PostsState = {
   posts: {
     list: RollCallCardInterface[];
   };
+  user: {
+    username: string | null;
+    password: string | null;
+    isLoggedIn: boolean;
+  };
 };

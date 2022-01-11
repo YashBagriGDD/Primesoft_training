@@ -23,6 +23,7 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import Login from "./containers/Login";
 
 const App: React.FC = () => (
   <IonApp>
@@ -34,6 +35,7 @@ const App: React.FC = () => (
           exact={true}
           component={RollCallDetail}
         />
+        <Route path={"/login"} exact={true} component={Login} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

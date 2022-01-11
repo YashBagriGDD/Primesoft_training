@@ -7,7 +7,7 @@ import { Paths } from "../../constants/Paths";
 const BaseLayout: React.FC = ({ children }) => {
   return (
     <div>
-      <NavSidebar paths={Paths} username={"username"} />
+      <NavSidebar paths={Paths} />
       <IonPage id="main-content">
         <Header title={"eRollCall"} />
         {children}
