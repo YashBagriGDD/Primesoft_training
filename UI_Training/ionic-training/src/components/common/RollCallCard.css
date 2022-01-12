@@ -1,19 +1,18 @@
 ion-card {
   border-radius: 10px;
-
   padding: 0px;
 }
 
-ion-card ion-grid {
+ion-card.roll-call-card ion-grid {
   --ion-grid-padding: 0px;
 }
 
-ion-card ion-grid ion-row ion-col {
+ion-card.roll-call-card ion-grid ion-row ion-col {
   background: #a28be6;
   --ion-grid-column-padding: 0px;
 }
 
-ion-card ion-grid ion-row ion-col ion-button {
+ion-card.roll-call-card ion-grid ion-row ion-col ion-button {
   --color: #ddd4ef;
   margin: 0px;
 }

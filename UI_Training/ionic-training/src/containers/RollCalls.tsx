@@ -47,7 +47,7 @@ const RollCalls: React.FC = () => {
 
   const postsList = () =>
     post?.list?.map((item: RollCallCardInterface, index) => (
-      <IonCol key={index} size="12" sizeMd="4">
+      <IonCol key={index} size="12" sizeLg="4">
         <RollCallCard
           state={item.state}
           billNum={item.billNum}
@@ -99,6 +99,7 @@ const RollCalls: React.FC = () => {
         <IonSegment
           color={"purple"}
           onIonChange={(e) => setTab(e.detail.value)}
+          value={tab}
         >
           <IonSegmentButton value="non-initiated">
             <IonLabel>Non initiated</IonLabel>

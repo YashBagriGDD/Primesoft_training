@@ -1,8 +1,45 @@
 ion-content.login {
-  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  display: table;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 
-.login > ion-segment ion-segment-button ion-label {
+.login > div.container {
+  margin: auto;
+  max-width: 740px;
+}
+
+.login > div h1 {
+  margin-bottom: 100px;
+}
+
+.login > div ion-segment {
+  --background: var(--ion-color-light-shade);
+}
+
+.login > div ion-segment ion-segment-button ion-label {
   text-transform: none;
+}
+
+div.login-form > ion-input {
+  --color: var(--ion-input-purple-shade);
+  --placeholder-color: var(--ion-input-purple-shade);
+}
+
+.login > div ion-card div ion-grid ion-row ion-col ion-label {
+  color: var(--ion-color-purple-shade);
+}
+
+.login > div ion-card div ion-grid ion-row ion-col ion-button {
+  font-size: 16px;
+  text-transform: none;
+}
+
+.login > div h6 {
+  color: var(--ion-color-light);
+  font-size: 12px;
+  margin-top: 30px;
 }

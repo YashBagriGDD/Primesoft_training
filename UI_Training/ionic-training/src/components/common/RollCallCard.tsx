@@ -23,7 +23,7 @@ interface RollCallCardProps {
 
 const RollCallCard: React.FC<RollCallCardProps> = (props) => {
   return (
-    <IonCard>
+    <IonCard className="roll-call-card">
       {props.isSoftRollCall ? (
         <div>
           <div className={"ion-float-end soft-roll-call"}>
