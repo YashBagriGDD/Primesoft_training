@@ -1,8 +1,8 @@
 import { IonPage } from "@ionic/react";
 import Header from "./Header";
-import Footer from "./Footer";
 import NavSidebar from "../common/Sidebar";
 import { Paths } from "../../constants/Paths";
+import BottomTabs from "../common/BottomTabs";
 
 const BaseLayout: React.FC = ({ children }) => {
   return (
@@ -12,6 +12,7 @@ const BaseLayout: React.FC = ({ children }) => {
         <Header title={"eRollCall"} />
         {children}
       </IonPage>
+      <BottomTabs paths={Paths} />
     </div>
   );
 };

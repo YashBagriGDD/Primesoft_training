@@ -1,24 +1,52 @@
 import React from "react";
-import { IonIcon, IonLabel, IonTabBar, IonTabButton } from "@ionic/react";
-import { gameController, musicalNote, videocam } from "ionicons/icons";
+import {
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+} from "@ionic/react";
+import { Route } from "react-router";
+import { RouteInterface } from "../../interfaces/interfaces";
 
-//TODO: Delete this comment
-const BottomTabs: React.FC = () => {
+interface Props {
+  paths: RouteInterface[];
+}
+
+const BottomTabs: React.FC<Props> = (props: Props) => {
+  const routesMap = props.paths
+    .filter((routes: RouteInterface) => {
+      if (routes.tabRender === false) return false;
+      return true;
+    })
+    .map((routes, index) => {
+      return <Route path={routes.path} exact key={index} />;
+    });
+
+  const tabsMap = props.paths
+    .filter((routes: RouteInterface) => {
+      if (routes.tabRender === false) return false;
+      return true;
+    })
+    .map((routes, index) => {
+      let tabName = routes.name.replaceAll("\\/", "");
+
+      return (
+        <IonTabButton tab={tabName} href={routes.path} key={index}>
+          <IonIcon icon={routes.icon} />
+          <IonLabel>{routes.name}</IonLabel>
+        </IonTabButton>
+      );
+    });
+
   return (
-    <IonTabBar slot={"bottom"}>
-      <IonTabButton tab={"music"}>
-        <IonLabel>Music</IonLabel>
-        <IonIcon ios={musicalNote} md={musicalNote}></IonIcon>
-      </IonTabButton>
-      <IonTabButton tab={"movies"}>
-        <IonLabel>Movies</IonLabel>
-        <IonIcon ios={videocam} md={videocam}></IonIcon>
-      </IonTabButton>
-      <IonTabButton tab={"games"}>
-        <IonLabel>Games</IonLabel>
-        <IonIcon ios={gameController} md={gameController}></IonIcon>
-      </IonTabButton>
-    </IonTabBar>
+    <div className="ion-hide-sm-up">
+      <IonTabs>
+        <IonRouterOutlet>{routesMap}</IonRouterOutlet>
+        <IonTabBar slot="bottom">{tabsMap}</IonTabBar>
+      </IonTabs>
+    </div>
   );
 };
 

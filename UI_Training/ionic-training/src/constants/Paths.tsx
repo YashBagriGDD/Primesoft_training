@@ -1,21 +1,16 @@
 import Home from "../containers/Home";
 import Explore from "../containers/Explore";
-import MyPage from "../containers/MyPage";
 import {
   businessOutline,
   homeOutline,
   informationCircleOutline,
   listOutline,
   lockClosedOutline,
-  logInOutline,
   logOutOutline,
   personOutline,
 } from "ionicons/icons";
-import TabbedLayout from "../components/Layouts/TabbedLayout";
 import { RouteInterface } from "../interfaces/interfaces";
 import RollCalls from "../containers/RollCalls";
-import RollCallDetail from "../containers/RollCallDetail";
-import Login from "../containers/Login";
 
 export const Paths: RouteInterface[] = [
   {
@@ -24,6 +19,7 @@ export const Paths: RouteInterface[] = [
     name: "Home",
     icon: homeOutline,
     sidebarRender: false,
+    tabRender: false,
   },
   {
     path: "/organizations",
@@ -32,25 +28,25 @@ export const Paths: RouteInterface[] = [
     icon: businessOutline,
   },
   {
-    path: "/rollcalls",
+    path: "/",
     component: RollCalls,
     name: "Roll Calls",
     icon: listOutline,
   },
-  {
-    path: "/initiated",
-    component: RollCalls,
-    name: "Roll Calls",
-    icon: listOutline,
-    sidebarRender: false,
-  },
-  {
-    path: "/closed",
-    component: RollCalls,
-    name: "Roll Calls",
-    icon: listOutline,
-    sidebarRender: false,
-  },
+  // {
+  //   path: "/initiated",
+  //   component: RollCalls,
+  //   name: "Roll Calls",
+  //   icon: listOutline,
+  //   sidebarRender: false,
+  // },
+  // {
+  //   path: "/closed",
+  //   component: RollCalls,
+  //   name: "Roll Calls",
+  //   icon: listOutline,
+  //   sidebarRender: false,
+  // },
   // {
   //   path: "/rollcalls/:index",
   //   component: RollCallDetail,
@@ -66,9 +62,10 @@ export const Paths: RouteInterface[] = [
   },
   {
     path: "/changepassword",
-    component: TabbedLayout,
+    component: Explore,
     name: "Change Password",
     icon: lockClosedOutline,
+    tabRender: false,
   },
   {
     path: "/terms",
@@ -81,5 +78,6 @@ export const Paths: RouteInterface[] = [
     component: Home,
     name: "Logout",
     icon: logOutOutline,
+    tabRender: false,
   },
 ];

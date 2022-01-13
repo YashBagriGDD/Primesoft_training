@@ -10,6 +10,7 @@ export interface RouteInterface {
   component: React.FC<{}>;
   icon: string;
   sidebarRender?: boolean;
+  tabRender?: boolean;
 }
 
 export interface RollCallCardInterface {

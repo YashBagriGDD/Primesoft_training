@@ -15,6 +15,7 @@ ion-card.roll-call-card ion-grid ion-row ion-col {
 ion-card.roll-call-card ion-grid ion-row ion-col ion-button {
   --color: #ddd4ef;
   margin: 0px;
+  text-transform: none;
 }
 
 .soft-roll-call {
@@ -22,5 +23,5 @@ ion-card.roll-call-card ion-grid ion-row ion-col ion-button {
   border-bottom-left-radius: 10px;
   --color: #949494;
   padding: 5px;
-  text-decoration: none;
+  text-transform: none;
 }

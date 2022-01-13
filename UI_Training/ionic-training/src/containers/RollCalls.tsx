@@ -7,13 +7,9 @@ import {
   IonHeader,
   IonIcon,
   IonLabel,
-  IonRouterOutlet,
   IonRow,
   IonSegment,
   IonSegmentButton,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -25,7 +21,6 @@ import { PostsState, RollCallCardInterface } from "../interfaces/interfaces";
 
 import { RootState } from "..";
 import ErrorAlert from "../components/common/ErrorAlert";
-import { Route } from "react-router";
 
 import "./RollCalls.css";
 
@@ -114,50 +109,6 @@ const RollCalls: React.FC = () => {
 
         {tabContent()}
       </div>
-
-      {/* <ErrorAlert errorCode="403" message="Opps, Something went wrong." /> */}
-
-      {/* <IonGrid>
-        <IonRow>{postsList()}</IonRow>
-      </IonGrid> */}
-
-      {/* <div>
-        <IonTabs>
-          <IonRouterOutlet>
-            <Route
-              path="/rollcalls"
-              exact
-              render={() => (
-                <IonGrid>
-                  <IonRow>{postsList()}</IonRow>
-                </IonGrid>
-              )}
-            />
-            <Route
-              path="/initiated"
-              exact
-              render={() => (
-                <ErrorAlert
-                  errorCode="403"
-                  message="Opps, Something went wrong."
-                />
-              )}
-            />
-            <Route path="/closed" exact render={() => <h1>Closed page</h1>} />
-          </IonRouterOutlet>
-          <IonTabBar slot="top">
-            <IonTabButton tab="non-initiated" href="/rollcalls">
-              <IonLabel>Non initiated</IonLabel>
-            </IonTabButton>
-            <IonTabButton tab="initiated" href="/initiated">
-              <IonLabel>Initiated</IonLabel>
-            </IonTabButton>
-            <IonTabButton tab="closed" href="/closed">
-              <IonLabel>Closed</IonLabel>
-            </IonTabButton>
-          </IonTabBar>
-        </IonTabs>
-      </div> */}
     </IonContent>
   );
 };
