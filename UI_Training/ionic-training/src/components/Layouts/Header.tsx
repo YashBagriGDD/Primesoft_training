@@ -21,14 +21,11 @@ const Header: React.FC<Props> = (props) => {
     <IonHeader>
       <IonToolbar>
         <IonButtons slot="start">
-          <IonMenuToggle className="ion-hide-sm-down">
+          <IonMenuToggle>
             <IonButton>
               <IonIcon name="menu-outline"></IonIcon>
             </IonButton>
           </IonMenuToggle>
-          <IonButton className="ion-hide-sm-up">
-            <IonIcon icon={person} color="medium" />
-          </IonButton>
         </IonButtons>
         <IonTitle className={"center-sm"}>{props.title}</IonTitle>
         <IonButtons slot={"end"}>

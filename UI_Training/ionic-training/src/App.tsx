@@ -25,20 +25,24 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import Login from "./containers/Login";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        {Routes()}
-        <Route
-          path={"/rollcalls/:index"}
-          exact={true}
-          component={RollCallDetail}
-        />
-        <Route path={"/login"} exact={true} component={Login} />
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  console.log("rendered");
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          {Routes()}
+          <Route
+            path={"/rollcalls/:index"}
+            exact={true}
+            component={RollCallDetail}
+          />
+          <Route path={"/login"} exact={true} component={Login} />
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;

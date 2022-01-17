@@ -43,7 +43,7 @@ const BottomTabs: React.FC<Props> = (props: Props) => {
   return (
     <div className="ion-hide-sm-up">
       <IonTabs>
-        <IonRouterOutlet>{routesMap}</IonRouterOutlet>
+        <IonRouterOutlet></IonRouterOutlet>
         <IonTabBar slot="bottom">{tabsMap}</IonTabBar>
       </IonTabs>
     </div>
