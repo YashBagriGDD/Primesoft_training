@@ -20,7 +20,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { chevronBack, chevronForward, pencil } from "ionicons/icons";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { RootState } from "..";
@@ -38,6 +38,10 @@ const RollCallDetail: React.FC = () => {
   const posts = useSelector<RootState, PostsState["posts"]>(
     (state) => state.posts
   );
+
+  const previousValue = useRef();
+
+  useEffect(() => {}, [posts]);
 
   const currentRollCall = posts.list[parseInt(index)];
 

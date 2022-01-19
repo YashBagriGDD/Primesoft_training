@@ -2,7 +2,7 @@ import React from "react";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Routes } from "./routes/Routes";
-import { Route } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import RollCallDetail from "./containers/RollCallDetail";
 
 /* Core CSS required for Ionic components to work properly */
@@ -31,7 +31,7 @@ const App: React.FC = () => {
   return (
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet>
+        <Switch>
           {Routes()}
           <Route
             path={"/rollcalls/:index"}
@@ -39,7 +39,7 @@ const App: React.FC = () => {
             component={RollCallDetail}
           />
           <Route path={"/login"} exact={true} component={Login} />
-        </IonRouterOutlet>
+        </Switch>
       </IonReactRouter>
     </IonApp>
   );
