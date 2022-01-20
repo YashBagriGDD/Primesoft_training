@@ -8,7 +8,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { notificationsOutline, person } from "ionicons/icons";
+import { notificationsOutline } from "ionicons/icons";
 
 import "./Header.css";
 

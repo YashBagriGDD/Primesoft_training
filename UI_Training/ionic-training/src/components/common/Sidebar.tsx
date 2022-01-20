@@ -22,9 +22,10 @@ interface Props {
 }
 
 const NavSidebar: React.FC<Props> = (props: Props) => {
-  const user = useSelector<RootState, PostsState["user"]>((state) => state);
+  const user = useSelector<RootState, PostsState["user"]>(
+    (state) => state.user
+  );
 
-  // const sidebarItems = ;
   const location = useLocation();
 
   const sidebarItems = props.paths
@@ -55,7 +56,7 @@ const NavSidebar: React.FC<Props> = (props: Props) => {
               <IonIcon ios={person} md={person} size="large" color="medium" />
               <div className="ion-align-items-stretch ion-wrap">
                 <IonTitle className="username">
-                  {user.username ? user.username : "Username"}
+                  {user.isLoggedIn ? user.username : "Username"}
                 </IonTitle>
                 <IonTitle className="view-profile">View Profile</IonTitle>
               </div>

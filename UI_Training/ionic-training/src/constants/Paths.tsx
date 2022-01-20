@@ -30,7 +30,7 @@ export const Paths: RouteInterface[] = [
     tabRender: true,
   },
   {
-    path: "/rollcalls",
+    path: "/",
     component: RollCalls,
     name: "Roll Calls",
     icon: listOutline,

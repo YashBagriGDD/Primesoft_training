@@ -20,7 +20,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { chevronBack, chevronForward, pencil } from "ionicons/icons";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { RootState } from "..";
@@ -39,8 +39,6 @@ const RollCallDetail: React.FC = () => {
     (state) => state.posts
   );
 
-  const previousValue = useRef();
-
   useEffect(() => {}, [posts]);
 
   const currentRollCall = posts.list[parseInt(index)];
@@ -50,7 +48,11 @@ const RollCallDetail: React.FC = () => {
       <IonHeader>
         <IonToolbar color="purple">
           <IonButtons slot="start">
-            <IonBackButton icon={chevronBack} text={""} />
+            <IonBackButton
+              defaultHref="/rollcalls"
+              icon={chevronBack}
+              text={""}
+            />
           </IonButtons>
           <IonTitle className={"center-text"}>View Roll Call</IonTitle>
         </IonToolbar>

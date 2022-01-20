@@ -7,7 +7,6 @@ import {
   IonTabButton,
   IonTabs,
 } from "@ionic/react";
-import { Route } from "react-router";
 import { RouteInterface } from "../../interfaces/interfaces";
 
 interface Props {
@@ -15,14 +14,14 @@ interface Props {
 }
 
 const BottomTabs: React.FC<Props> = (props: Props) => {
-  const routesMap = props.paths
-    .filter((routes: RouteInterface) => {
-      if (routes.tabRender === false) return false;
-      return true;
-    })
-    .map((routes, index) => {
-      return <Route path={routes.path} exact key={index} />;
-    });
+  // const routesMap = props.paths
+  //   .filter((routes: RouteInterface) => {
+  //     if (routes.tabRender === false) return false;
+  //     return true;
+  //   })
+  //   .map((routes, index) => {
+  //     return <Route path={routes.path} exact key={index} />;
+  //   });
 
   const tabsMap = props.paths
     .filter((routes: RouteInterface) => {
