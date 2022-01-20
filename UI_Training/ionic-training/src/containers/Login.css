@@ -1,8 +1,8 @@
 ion-content.login {
   align-items: center;
   box-sizing: border-box;
-  display: table;
   flex-direction: column;
+  display: table;
   height: 100%;
   width: 100%;
 }
@@ -10,6 +10,9 @@ ion-content.login {
 .login > div.container {
   margin: auto;
   max-width: 740px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-60%);
 }
 
 .login > div h1 {
