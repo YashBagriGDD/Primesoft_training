@@ -8,7 +8,7 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { notificationsOutline } from "ionicons/icons";
+import { menuOutline, notificationsOutline } from "ionicons/icons";
 
 import "./Header.css";
 
@@ -23,7 +23,7 @@ const Header: React.FC<Props> = (props) => {
         <IonButtons slot="start">
           <IonMenuToggle>
             <IonButton>
-              <IonIcon name="menu-outline"></IonIcon>
+              <IonIcon icon={menuOutline}></IonIcon>
             </IonButton>
           </IonMenuToggle>
         </IonButtons>

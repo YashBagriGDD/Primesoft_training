@@ -1,5 +1,5 @@
 import React from "react";
-import { IonApp, IonRouterOutlet } from "@ionic/react";
+import { IonApp, IonRouterOutlet, setupIonicReact } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { Routes } from "./routes/Routes";
 import { Redirect, Route, Switch } from "react-router-dom";
@@ -24,6 +24,8 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import Login from "./containers/Login";
+
+setupIonicReact();
 
 const App: React.FC = () => {
   console.log("rendered");

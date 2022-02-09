@@ -2,7 +2,8 @@ import { IonPage } from "@ionic/react";
 import Header from "./Header";
 import NavSidebar from "../common/Sidebar";
 import { Paths } from "../../constants/Paths";
-import BottomTabs from "../common/BottomTabs";
+// import BottomTabs from "../common/BottomTabs";
+import { BottomTabs } from "@YashBagriGDD/erollcall-library";
 
 const BaseLayout: React.FC = ({ children }) => {
   return (
