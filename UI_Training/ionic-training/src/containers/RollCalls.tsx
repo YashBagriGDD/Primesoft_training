@@ -14,15 +14,19 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import { add } from "ionicons/icons";
-import RollCallCard from "../components/common/RollCallCard";
+// import RollCallCard from "../components/common/RollCallCard";
 import { useDispatch, useSelector } from "react-redux";
 import { GetCards } from "../redux/actions";
 import { PostsState, RollCallCardInterface } from "../interfaces/interfaces";
 
 import { RootState } from "..";
-import ErrorAlert from "../components/common/ErrorAlert";
+// import ErrorAlert from "../components/common/ErrorAlert";
+import { RollCallCard } from "@YashBagriGDD/erollcall-library";
+import { ErrorAlert } from "@YashBagriGDD/erollcall-library";
 
 import "./RollCalls.css";
+import "../components/common/RollCallCard.css";
+import "../components/common/ErrorAlert.css";
 
 //TODO: Style buttons properly
 const RollCalls: React.FC = () => {

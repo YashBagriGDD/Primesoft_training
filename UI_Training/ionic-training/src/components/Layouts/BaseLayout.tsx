@@ -4,6 +4,7 @@ import NavSidebar from "../common/Sidebar";
 import { Paths } from "../../constants/Paths";
 // import BottomTabs from "../common/BottomTabs";
 import { BottomTabs } from "@YashBagriGDD/erollcall-library";
+import { Sidebar } from "@YashBagriGDD/erollcall-library";
 
 const BaseLayout: React.FC = ({ children }) => {
   return (
