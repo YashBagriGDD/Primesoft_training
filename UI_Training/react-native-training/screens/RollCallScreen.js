@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const RollCallScreen = (props) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Header title={"Rolls Calls"} />
       <View style={styles.screen}>
         <Text>The Roll Calls Screen</Text>
@@ -14,6 +14,10 @@ const RollCallScreen = (props) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   screen: {
     flex: 1,
     justifyContent: "center",

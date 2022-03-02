@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const DetailsScreen = (props) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Header title={"Details"} />
       <View style={styles.screen}>
         <Text>The Details Screen</Text>
@@ -14,6 +14,10 @@ const DetailsScreen = (props) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   screen: {
     flex: 1,
     justifyContent: "center",
