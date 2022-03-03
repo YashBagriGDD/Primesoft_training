@@ -1,6 +1,6 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 const Header = (props) => {
   return (
@@ -12,14 +12,14 @@ const Header = (props) => {
 
 const styles = StyleSheet.create({
   header: {
-    width: "100%",
+    width: '100%',
     height: 60,
-    backgroundColor: "#5b37a1",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#5b37a1',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   headerTitle: {
-    color: "white",
+    color: 'white',
     fontSize: 18,
   },
 });
