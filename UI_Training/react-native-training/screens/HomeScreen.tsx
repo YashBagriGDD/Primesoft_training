@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import Header from '../components/Header';
+import HeaderButton from '../components/HeaderButton';
 
 const HomeScreen: JSX.Element = (props) => {
   return (
@@ -8,19 +10,26 @@ const HomeScreen: JSX.Element = (props) => {
       <Header title="Home" />
       <View style={styles.screen}>
         <Text>The Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => {
-            props.navigation.navigate({ routeName: 'Details' });
-          }}
-        />
       </View>
     </View>
   );
 };
 
-HomeScreen.navigationOptions = {
-  headerTitle: 'Home',
+HomeScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: 'Home',
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName="menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({

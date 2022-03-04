@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import Header from '../components/Header';
+import HeaderButton from '../components/HeaderButton';
 
 const RollCallScreen = (props) => {
   return (
@@ -8,13 +10,32 @@ const RollCallScreen = (props) => {
       <Header title="Rolls Calls" />
       <View style={styles.screen}>
         <Text>The Roll Calls Screen</Text>
+        <Button
+          title="Go to Details"
+          onPress={() => {
+            props.navigation.navigate({ routeName: 'Details' });
+          }}
+        />
       </View>
     </View>
   );
 };
 
-RollCallScreen.navigationOptions = {
-  headerTitle: 'Roll Calls',
+RollCallScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: 'Roll Calls',
+    headerLeft: (
+      <HeaderButtons HeaderButtonComponent={HeaderButton}>
+        <Item
+          title="Menu"
+          iconName="menu"
+          onPress={() => {
+            navData.navigation.toggleDrawer();
+          }}
+        />
+      </HeaderButtons>
+    ),
+  };
 };
 
 const styles = StyleSheet.create({

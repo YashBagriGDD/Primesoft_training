@@ -9,30 +9,39 @@ import HomeScreen from '../screens/HomeScreen';
 import RollCallScreen from '../screens/RollCallScreen';
 import Colors from '../constants/Colors';
 import LoginScreen from '../screens/LoginScreen';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 
-const StackNavigator = createStackNavigator(
+const defaultStackNavOptions = {
+  headerStyle: {
+    backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : '',
+  },
+  headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor,
+};
+
+const HomeStackNavigator = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen,
-    RollCalls: RollCallScreen,
     Login: LoginScreen,
   },
   {
-    // Using Platform.OS resulted in an undefined break here
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : '',
-      },
-      headerTintColor:
-        Platform.OS === 'android' ? 'white' : Colors.primaryColor,
-    },
+    defaultNavigationOptions: defaultStackNavOptions,
   }
 );
 
-const TabNavigator = createBottomTabNavigator(
+const RollStackNavigator = createStackNavigator(
+  {
+    RollCalls: RollCallScreen,
+    Details: DetailsScreen,
+  },
+  {
+    defaultNavigationOptions: defaultStackNavOptions,
+  }
+);
+
+const HomeTabNavigator = createBottomTabNavigator(
   {
     Home: {
-      screen: StackNavigator,
+      screen: HomeStackNavigator,
       navigationOptions: {
         tabBarIcon: (tabInfo) => (
           <Icon name="home-outline" type="ionicon" color={tabInfo.tintColor} />
@@ -40,7 +49,7 @@ const TabNavigator = createBottomTabNavigator(
       },
     },
     RollCalls: {
-      screen: RollCallScreen,
+      screen: RollStackNavigator,
       navigationOptions: {
         tabBarIcon: (tabInfo) => (
           <Icon name="list-outline" type="ionicon" color={tabInfo.tintColor} />
@@ -55,4 +64,35 @@ const TabNavigator = createBottomTabNavigator(
   }
 );
 
-export default createAppContainer(TabNavigator);
+const RollsTabNavigator = createBottomTabNavigator(
+  {
+    RollCalls: {
+      screen: RollStackNavigator,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => (
+          <Icon name="list-outline" type="ionicon" color={tabInfo.tintColor} />
+        ),
+      },
+    },
+    Home: {
+      screen: HomeStackNavigator,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => (
+          <Icon name="home-outline" type="ionicon" color={tabInfo.tintColor} />
+        ),
+      },
+    },
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: Colors.primaryColor,
+    },
+  }
+);
+
+const DrawerNavigator = createDrawerNavigator({
+  Home: HomeTabNavigator,
+  RollCalls: RollsTabNavigator,
+});
+
+export default createAppContainer(DrawerNavigator);
