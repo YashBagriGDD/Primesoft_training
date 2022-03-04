@@ -1,9 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button, Platform } from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
 import Header from '../components/Header';
-import Colors from '../constants/Colors';
 
-const HomeScreen = (props) => {
+const HomeScreen: JSX.Element = (props) => {
   return (
     <View style={styles.container}>
       <Header title="Home" />
@@ -22,10 +21,6 @@ const HomeScreen = (props) => {
 
 HomeScreen.navigationOptions = {
   headerTitle: 'Home',
-  headerStyle: {
-    backgroundColor: Platform.OS === 'android' ? Colors.primaryColor : '',
-  },
-  headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primaryColor,
 };
 
 const styles = StyleSheet.create({

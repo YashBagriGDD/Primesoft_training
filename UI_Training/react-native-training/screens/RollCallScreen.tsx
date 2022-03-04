@@ -1,11 +1,11 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import Header from "../components/Header";
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import Header from '../components/Header';
 
 const RollCallScreen = (props) => {
   return (
     <View style={styles.container}>
-      <Header title={"Rolls Calls"} />
+      <Header title="Rolls Calls" />
       <View style={styles.screen}>
         <Text>The Roll Calls Screen</Text>
       </View>
@@ -13,15 +13,19 @@ const RollCallScreen = (props) => {
   );
 };
 
+RollCallScreen.navigationOptions = {
+  headerTitle: 'Roll Calls',
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: '#fff',
   },
   screen: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
