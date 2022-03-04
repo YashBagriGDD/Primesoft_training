@@ -4,12 +4,12 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Icon } from 'react-native-elements';
+import { createDrawerNavigator } from 'react-navigation-drawer';
 import DetailsScreen from '../screens/DetailsScreen';
 import HomeScreen from '../screens/HomeScreen';
 import RollCallScreen from '../screens/RollCallScreen';
 import Colors from '../constants/Colors';
 import LoginScreen from '../screens/LoginScreen';
-import { createDrawerNavigator } from 'react-navigation-drawer';
 
 const defaultStackNavOptions = {
   headerStyle: {
@@ -90,9 +90,10 @@ const RollsTabNavigator = createBottomTabNavigator(
   }
 );
 
+// IMPORTANT: Have to change Drawer.js interpolate to interpolateNode
 const DrawerNavigator = createDrawerNavigator({
   Home: HomeTabNavigator,
-  RollCalls: RollsTabNavigator,
+  RollCalls: HomeTabNavigator,
 });
 
 export default createAppContainer(DrawerNavigator);

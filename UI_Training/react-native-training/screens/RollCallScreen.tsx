@@ -24,7 +24,7 @@ const RollCallScreen = (props) => {
 RollCallScreen.navigationOptions = (navData) => {
   return {
     headerTitle: 'Roll Calls',
-    headerLeft: (
+    headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Menu"

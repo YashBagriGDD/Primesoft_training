@@ -18,7 +18,7 @@ const HomeScreen: JSX.Element = (props) => {
 HomeScreen.navigationOptions = (navData) => {
   return {
     headerTitle: 'Home',
-    headerLeft: (
+    headerLeft: () => (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
           title="Menu"
