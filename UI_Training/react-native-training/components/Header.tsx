@@ -21,8 +21,9 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 60,
     backgroundColor: Colors.primaryColor,
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
+    paddingLeft: 20,
   },
   headerTitle: {
     color: 'white',

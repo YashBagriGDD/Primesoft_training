@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Card, Text } from 'react-native-elements';
 import { useSelector } from 'react-redux';
 import { RootState } from '../App';
 import Header from '../components/Header';
@@ -17,9 +18,27 @@ const DetailsScreen: React.FC = (props) => {
 
   return (
     <View style={styles.container}>
-      <Header title="Details" />
-      <View style={styles.screen}>
-        <Text>The Details Screen</Text>
+      <Card>
+        <Text>State - Bill Number</Text>
+        <Text>
+          {currentRollCall.state} - {currentRollCall.billNum}
+        </Text>
+      </Card>
+      <Card>
+        <Text>Roll Call Name</Text>
+        <Text>{currentRollCall.name}</Text>
+      </Card>
+      <View>
+        <Text>Summary</Text>
+      </View>
+      <View>
+        <Text>View Location</Text>
+      </View>
+      <View>
+        <Text>Assign Lobbyists</Text>
+      </View>
+      <View>
+        <Text>View Timeline</Text>
       </View>
     </View>
   );

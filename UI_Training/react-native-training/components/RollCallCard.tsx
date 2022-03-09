@@ -31,7 +31,7 @@ const RollCallCard: React.FC<Props> = (props) => {
           {state} - {billNum} - {name} - {endDate}
         </Text>
       </View>
-      <View>
+      <View style={styles.buttonContainer}>
         <Button title="View Bill" buttonStyle={styles.button} />
         <Button
           buttonStyle={styles.button}
@@ -48,13 +48,18 @@ RollCallCard.defaultProps = {
 };
 
 const styles = StyleSheet.create({
-  button: {
+  buttonContainer: {
     flex: 1,
     flexDirection: 'row',
+    alignItems: 'stretch',
+  },
+  button: {
+    flex: 1,
     borderRadius: 0,
     marginLeft: 0,
     marginRight: 0,
     marginBottom: 0,
+    alignSelf: 'stretch',
   },
 });
 
