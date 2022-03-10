@@ -1,27 +1,72 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import Header from '../components/Header';
+import React, { useState } from 'react';
+import { View, StyleSheet, KeyboardAvoidingView } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { Button, Card, Input, Text } from 'react-native-elements';
+import { ScrollView } from 'react-native-gesture-handler';
+import Colors from '../constants/Colors';
+import { LoginAction } from '../redux/actions';
 
 const LoginScreen = (props) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const dispatch = useDispatch();
+
+  const LoginClick = (): void => {
+    dispatch(LoginAction(username, password));
+    props.navigation.navigate('Home');
+  };
+
   return (
-    <View style={styles.container}>
-      <Header title="Login" />
-      <View style={styles.screen}>
-        <Text>The Login Screen</Text>
-      </View>
-    </View>
+    <KeyboardAvoidingView
+      style={styles.screen}
+      behavior="padding"
+      keyboardVerticalOffset={50}
+    >
+      <Text h1 style={styles.title}>
+        eRollCall
+      </Text>
+      <Card>
+        <ScrollView>
+          <Input
+            placeholder="Username"
+            onChangeText={(value) => setUsername(value)}
+          />
+          <Input
+            placeholder="Password"
+            secureTextEntry
+            onChangeText={(value) => setPassword(value)}
+          />
+        </ScrollView>
+        <Button
+          title="Login"
+          buttonStyle={styles.button}
+          onPressIn={LoginClick}
+        />
+      </Card>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
   screen: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: Colors.primaryColor,
+  },
+  cardContainer: {
+    width: '80%',
+    maxWidth: 400,
+    maxHeight: 400,
+    padding: 20,
+  },
+  button: {
+    marginTop: 10,
+  },
+  title: {
+    marginBottom: 30,
+    color: '#fff',
   },
 });
 

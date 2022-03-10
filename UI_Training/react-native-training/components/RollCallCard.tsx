@@ -36,7 +36,7 @@ const RollCallCard: React.FC<Props> = (props) => {
         <Button
           buttonStyle={styles.button}
           title="View Roll Call"
-          onPress={goRoute}
+          onPressIn={goRoute}
         />
       </View>
     </Card>

@@ -1,18 +1,18 @@
-import { RollCallCardInterface } from "../../interfaces/interfaces";
+import { RollCallCardInterface } from '../../interfaces/interfaces';
 
 export const GetCards = (jsonItem: RollCallCardInterface[]) => {
   return {
-    type: "BUILD",
+    type: 'BUILD',
     payload: jsonItem,
   };
 };
 
 export const LoginAction = (username: string, password: string) => {
   return {
-    type: "LOGIN",
+    type: 'LOGIN',
     payload: {
-      username: username,
-      password: password,
+      username,
+      password,
       isLoggedIn: true,
     },
   };
@@ -20,6 +20,6 @@ export const LoginAction = (username: string, password: string) => {
 
 export const LogoutAction = () => {
   return {
-    type: "LOGOUT",
+    type: 'LOGOUT',
   };
 };

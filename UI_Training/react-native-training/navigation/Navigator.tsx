@@ -1,15 +1,17 @@
 import React from 'react';
-import { Platform } from 'react-native';
+import { Platform, SafeAreaView, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { Icon } from 'react-native-elements';
-import { createDrawerNavigator } from 'react-navigation-drawer';
+import { Button, Icon } from 'react-native-elements';
+import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
+import { useDispatch } from 'react-redux';
 import DetailsScreen from '../screens/DetailsScreen';
 import HomeScreen from '../screens/HomeScreen';
 import RollCallScreen from '../screens/RollCallScreen';
 import Colors from '../constants/Colors';
 import LoginScreen from '../screens/LoginScreen';
+import { LogoutAction } from '../redux/actions';
 
 const defaultStackNavOptions = {
   headerStyle: {
@@ -20,8 +22,7 @@ const defaultStackNavOptions = {
 
 const HomeStackNavigator = createStackNavigator(
   {
-    Home: HomeScreen,
-    Login: LoginScreen,
+    HomeStack: HomeScreen,
   },
   {
     defaultNavigationOptions: defaultStackNavOptions,
@@ -30,7 +31,7 @@ const HomeStackNavigator = createStackNavigator(
 
 const RollStackNavigator = createStackNavigator(
   {
-    RollCalls: RollCallScreen,
+    RollCallsStack: RollCallScreen,
     Details: DetailsScreen,
   },
   {
@@ -40,7 +41,7 @@ const RollStackNavigator = createStackNavigator(
 
 const HomeTabNavigator = createBottomTabNavigator(
   {
-    Home: {
+    HomeTab: {
       screen: HomeStackNavigator,
       navigationOptions: {
         tabBarIcon: (tabInfo) => (
@@ -48,37 +49,11 @@ const HomeTabNavigator = createBottomTabNavigator(
         ),
       },
     },
-    RollCalls: {
+    RollCallsTab: {
       screen: RollStackNavigator,
       navigationOptions: {
         tabBarIcon: (tabInfo) => (
           <Icon name="list-outline" type="ionicon" color={tabInfo.tintColor} />
-        ),
-      },
-    },
-  },
-  {
-    tabBarOptions: {
-      activeTintColor: Colors.primaryColor,
-    },
-  }
-);
-
-const RollsTabNavigator = createBottomTabNavigator(
-  {
-    RollCalls: {
-      screen: RollStackNavigator,
-      navigationOptions: {
-        tabBarIcon: (tabInfo) => (
-          <Icon name="list-outline" type="ionicon" color={tabInfo.tintColor} />
-        ),
-      },
-    },
-    Home: {
-      screen: HomeStackNavigator,
-      navigationOptions: {
-        tabBarIcon: (tabInfo) => (
-          <Icon name="home-outline" type="ionicon" color={tabInfo.tintColor} />
         ),
       },
     },
@@ -91,9 +66,40 @@ const RollsTabNavigator = createBottomTabNavigator(
 );
 
 // IMPORTANT: Have to change Drawer.js interpolate to interpolateNode
-const DrawerNavigator = createDrawerNavigator({
-  Home: HomeTabNavigator,
-  RollCalls: HomeTabNavigator,
+const DrawerNavigator = createDrawerNavigator(
+  {
+    HomeDrawer: HomeTabNavigator,
+    RollCallsDrawer: HomeTabNavigator,
+  },
+  {
+    contentOptions: {
+      activeBackgroundColor: Colors.primaryColor,
+    },
+    contentComponent: (props) => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      const dispatch = useDispatch();
+      return (
+        <View style={{ flex: 1, paddingTop: 20 }}>
+          <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
+            <DrawerItems {...props} />
+            <Button
+              title="Logout"
+              buttonStyle={{ backgroundColor: Colors.primaryColor }}
+              onPressIn={() => {
+                dispatch(LogoutAction());
+                props.navigation.navigate('Auth');
+              }}
+            />
+          </SafeAreaView>
+        </View>
+      );
+    },
+  }
+);
+
+const MainNavigator = createSwitchNavigator({
+  Auth: LoginScreen,
+  Home: DrawerNavigator,
 });
 
-export default createAppContainer(DrawerNavigator);
+export default createAppContainer(MainNavigator);

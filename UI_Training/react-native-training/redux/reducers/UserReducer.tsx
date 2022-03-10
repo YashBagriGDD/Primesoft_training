@@ -5,7 +5,7 @@ type State = {
 };
 
 type Actions = {
-  type: "LOGIN" | "LOGOUT";
+  type: 'LOGIN' | 'LOGOUT';
   payload: {
     username: string;
     password: string;
@@ -20,14 +20,14 @@ const defaultState: State = {
 
 const UserReducer = (state: State = defaultState, action: Actions) => {
   switch (action.type) {
-    case "LOGIN":
+    case 'LOGIN':
       return {
         ...state,
         username: action.payload?.username,
         password: action.payload?.password,
         isLoggedIn: true,
       };
-    case "LOGOUT":
+    case 'LOGOUT':
       state = defaultState;
       return { ...state };
     default:

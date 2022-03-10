@@ -78,9 +78,7 @@ RollCallScreen.navigationOptions = (navData) => {
         <Item
           title="Menu"
           iconName="menu"
-          onPress={() => {
-            navData.navigation.toggleDrawer();
-          }}
+          onPress={() => navData.navigation.toggleDrawer()}
         />
       </HeaderButtons>
     ),
