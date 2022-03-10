@@ -39,6 +39,15 @@ const RollStackNavigator = createStackNavigator(
   }
 );
 
+const LoginStackNavigator = createStackNavigator(
+  {
+    LoginStack: LoginScreen,
+  },
+  {
+    defaultNavigationOptions: defaultStackNavOptions,
+  }
+);
+
 const HomeTabNavigator = createBottomTabNavigator(
   {
     HomeTab: {
@@ -98,7 +107,7 @@ const DrawerNavigator = createDrawerNavigator(
 );
 
 const MainNavigator = createSwitchNavigator({
-  Auth: LoginScreen,
+  Auth: LoginStackNavigator,
   Home: DrawerNavigator,
 });
 

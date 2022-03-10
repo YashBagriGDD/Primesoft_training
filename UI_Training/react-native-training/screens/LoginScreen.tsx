@@ -5,6 +5,7 @@ import { Button, Card, Input, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import Colors from '../constants/Colors';
 import { LoginAction } from '../redux/actions';
+import { HeaderTitle } from 'react-navigation-stack';
 
 const LoginScreen = (props) => {
   const [username, setUsername] = useState('');
@@ -23,9 +24,9 @@ const LoginScreen = (props) => {
       behavior="padding"
       keyboardVerticalOffset={50}
     >
-      <Text h1 style={styles.title}>
+      {/* <Text h1 style={styles.title}>
         eRollCall
-      </Text>
+      </Text> */}
       <Card>
         <ScrollView>
           <Input
@@ -48,6 +49,12 @@ const LoginScreen = (props) => {
   );
 };
 
+LoginScreen.navigationOptions = (navData) => {
+  return {
+    headerTitle: 'Login',
+  };
+};
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
@@ -62,10 +69,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   button: {
-    marginTop: 10,
+    marginTop: 5,
   },
   title: {
-    marginBottom: 30,
+    marginBottom: 5,
     color: '#fff',
   },
 });
