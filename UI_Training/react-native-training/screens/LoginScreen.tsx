@@ -24,10 +24,10 @@ const LoginScreen = (props) => {
       behavior="padding"
       keyboardVerticalOffset={50}
     >
-      {/* <Text h1 style={styles.title}>
+      <Text h1 style={styles.title}>
         eRollCall
-      </Text> */}
-      <Card>
+      </Text>
+      <Card containerStyle={styles.cardContainer}>
         <ScrollView>
           <Input
             placeholder="Username"
@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   button: {
-    marginTop: 5,
+    marginTop: 10,
   },
   title: {
-    marginBottom: 5,
+    marginBottom: 30,
     color: '#fff',
   },
 });
