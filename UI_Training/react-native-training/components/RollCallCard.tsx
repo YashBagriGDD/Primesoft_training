@@ -2,6 +2,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Text, Card, Button, Icon } from 'react-native-elements';
+import Colors from '../constants/Colors';
 
 interface Props {
   state: string;
@@ -17,17 +18,19 @@ const RollCallCard: React.FC<Props> = (props) => {
   const { state, billNum, name, endDate, isSoftRollCall, goRoute } = props;
 
   return (
-    <Card>
+    <Card containerStyle={styles.cardContainer}>
       {isSoftRollCall ? (
         <View>
-          <Text>Soft Roll Call</Text>
+          <Text style={styles.softRollCall}>Soft Roll Call</Text>
         </View>
       ) : (
         <></>
       )}
       <View>
-        <Text>State - Bill Number - Name - Roll Call End Date</Text>
-        <Text>
+        <Text style={styles.titleText}>
+          State - Bill Number - Name - Roll Call End Date
+        </Text>
+        <Text style={styles.contentText}>
           {state} - {billNum} - {name} - {endDate}
         </Text>
       </View>
@@ -48,10 +51,15 @@ RollCallCard.defaultProps = {
 };
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    flex: 1,
+    padding: 10,
+  },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'stretch',
+    justifyContent: 'space-evenly',
+    marginTop: 5,
   },
   button: {
     flex: 1,
@@ -59,7 +67,22 @@ const styles = StyleSheet.create({
     marginLeft: 0,
     marginRight: 0,
     marginBottom: 0,
-    alignSelf: 'stretch',
+    alignSelf: 'center',
+    backgroundColor: Colors.primaryColor,
+    width: '80%',
+  },
+  titleText: {
+    fontSize: 14,
+    fontWeight: 'normal',
+  },
+  contentText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+  softRollCall: {
+    textAlign: 'right',
+    fontSize: 12,
+    fontStyle: 'italic',
   },
 });
 

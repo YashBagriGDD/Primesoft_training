@@ -5,7 +5,6 @@ import { Button, Card, Input, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import Colors from '../constants/Colors';
 import { LoginAction } from '../redux/actions';
-import { HeaderTitle } from 'react-navigation-stack';
 
 const LoginScreen = (props) => {
   const [username, setUsername] = useState('');
@@ -22,7 +21,7 @@ const LoginScreen = (props) => {
     <KeyboardAvoidingView
       style={styles.screen}
       behavior="padding"
-      keyboardVerticalOffset={50}
+      keyboardVerticalOffset={10}
     >
       <Text h1 style={styles.title}>
         eRollCall

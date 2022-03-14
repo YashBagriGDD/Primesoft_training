@@ -49,11 +49,13 @@ const RollCallScreen = (props) => {
     <View style={styles.container}>
       <Header title="Rolls Calls" />
 
-      <Tab value={tab} onChange={(e) => setTab(e)}>
-        <Tab.Item title="Non-initiated" />
-        <Tab.Item title="Initiated" />
-        <Tab.Item title="Closed." />
-      </Tab>
+      <View style={styles.pageContainer}>
+        <Tab value={tab} onChange={(e) => setTab(e)}>
+          <Tab.Item title="Non-initiated" titleStyle={styles.tabTitle} />
+          <Tab.Item title="Initiated" titleStyle={styles.tabTitle} />
+          <Tab.Item title="Closed." titleStyle={styles.tabTitle} />
+        </Tab>
+      </View>
 
       <TabView value={tab} onChange={setTab} animationType={'timing'}>
         <TabView.Item>
@@ -90,10 +92,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  pageContainer: {
+    paddingTop: 10,
+    paddingHorizontal: 10,
+  },
   screen: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  tabTitle: {
+    fontSize: 12,
   },
 });
 

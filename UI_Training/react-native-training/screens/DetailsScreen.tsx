@@ -18,27 +18,29 @@ const DetailsScreen: React.FC = (props) => {
 
   return (
     <View style={styles.container}>
-      <Card>
-        <Text>State - Bill Number</Text>
-        <Text>
+      <Card containerStyle={styles.greyCard}>
+        <Text style={styles.labelText}>State - Bill Number</Text>
+        <Text style={styles.contentText}>
           {currentRollCall.state} - {currentRollCall.billNum}
         </Text>
       </Card>
       <Card>
-        <Text>Roll Call Name</Text>
-        <Text>{currentRollCall.name}</Text>
+        <Text style={styles.labelText}>Roll Call Name</Text>
+        <Text style={styles.contentText}>{currentRollCall.name}</Text>
       </Card>
-      <View>
-        <Text>Summary</Text>
-      </View>
-      <View>
-        <Text>View Location</Text>
-      </View>
-      <View>
-        <Text>Assign Lobbyists</Text>
-      </View>
-      <View>
-        <Text>View Timeline</Text>
+      <View style={styles.optionsContainer}>
+        <View style={styles.individualContainer}>
+          <Text style={styles.contentText}>Summary</Text>
+        </View>
+        <View style={styles.individualContainer}>
+          <Text style={styles.contentText}>View Location</Text>
+        </View>
+        <View style={styles.individualContainer}>
+          <Text style={styles.contentText}>Assign Lobbyists</Text>
+        </View>
+        <View style={styles.individualContainer}>
+          <Text style={styles.contentText}>View Timeline</Text>
+        </View>
       </View>
     </View>
   );
@@ -49,10 +51,30 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  optionsContainer: {
+    paddingHorizontal: 15,
+    paddingTop: 10,
+  },
+  individualContainer: {
+    paddingVertical: 20,
+    paddingHorizontal: 5,
+    borderBottomColor: 'black',
+    borderBottomWidth: 1,
+  },
   screen: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  greyCard: {
+    backgroundColor: '#D0D1D1',
+  },
+  labelText: {
+    fontSize: 14,
+  },
+  contentText: {
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 

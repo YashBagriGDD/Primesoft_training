@@ -75,6 +75,7 @@ const HomeTabNavigator = createBottomTabNavigator(
 );
 
 // IMPORTANT: Have to change Drawer.js interpolate to interpolateNode
+// /node_modules/react-navigation-drawer/lib/module/views/
 const DrawerNavigator = createDrawerNavigator(
   {
     HomeDrawer: HomeTabNavigator,
