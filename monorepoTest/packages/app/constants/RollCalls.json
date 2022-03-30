@@ -1,0 +1,25 @@
+{
+    "rollCalls": [
+        {
+            "state": "IL",
+            "billNum": "123456",
+            "name": "Joe Bill",
+            "endDate": "12/26/2020",
+            "isSoftRollCall": true
+        },
+        {
+            "state": "IL",
+            "billNum": "123456",
+            "name": "Joe Bill",
+            "endDate": "12/26/2020",
+            "isSoftRollCall": true
+        },
+        {
+            "state": "IL",
+            "billNum": "123456",
+            "name": "Joe Bill",
+            "endDate": "12/26/2020",
+            "isSoftRollCall": false
+        }
+    ]
+}

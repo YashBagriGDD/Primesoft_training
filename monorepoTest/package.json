@@ -1,0 +1,11 @@
+{
+  "name": "monorepoTest",
+  "version": "1.0.0",
+  "description": "monorepo",
+  "author": "Yash Bagri",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
