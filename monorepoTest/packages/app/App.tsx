@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
 import { configureStore } from '@monorepo/reduxStore';
+import StorybookUIRoot from '@monorepo/component/storybook';
 import Navigator from './navigation/Navigator';
 // import configureStore from './redux/store';
 
@@ -17,7 +18,8 @@ export type AppDispatch = typeof store.dispatch;
 export default function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <Navigator />
+      <StorybookUIRoot />
+      {/* <Navigator /> */}
     </Provider>
   );
 }

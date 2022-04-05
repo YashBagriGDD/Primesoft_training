@@ -1,8 +1,8 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { Text, Card, Button, Icon } from 'react-native-elements';
-import Colors from '../constants/Colors';
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import { Text, Card, Button, Icon } from "react-native-elements";
+import Colors from "../constants/Colors";
 
 interface Props {
   state: string;
@@ -52,37 +52,37 @@ RollCallCard.defaultProps = {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    flex: 1,
+    // flex: 1,
     padding: 10,
   },
   buttonContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    // flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
     marginTop: 5,
   },
   button: {
-    flex: 1,
+    // flex: 1,
     borderRadius: 0,
     marginLeft: 0,
     marginRight: 0,
     marginBottom: 0,
-    alignSelf: 'center',
+    alignSelf: "center",
     backgroundColor: Colors.primaryColor,
-    width: '80%',
+    width: "80%",
   },
   titleText: {
     fontSize: 14,
-    fontWeight: 'normal',
+    fontWeight: "normal",
   },
   contentText: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   softRollCall: {
-    textAlign: 'right',
+    textAlign: "right",
     fontSize: 12,
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
 });
 
