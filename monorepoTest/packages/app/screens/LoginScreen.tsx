@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, KeyboardAvoidingView } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux';
 import { Button, Card, Input, Text } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -13,8 +14,9 @@ const LoginScreen = (props) => {
 
   const dispatch = useDispatch();
 
-  const LoginClick = (): void => {
+  const LoginClick = async (): Promise<void> => {
     dispatch(LoginAction(username, password));
+    await AsyncStorage.setItem('isLoggedIn', 'true');
     props.navigation.navigate('Home');
   };
 

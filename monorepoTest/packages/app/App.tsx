@@ -18,8 +18,8 @@ export type AppDispatch = typeof store.dispatch;
 export default function App(): JSX.Element {
   return (
     <Provider store={store}>
-      <StorybookUIRoot />
-      {/* <Navigator /> */}
+      {/* <StorybookUIRoot /> */}
+      <Navigator />
     </Provider>
   );
 }

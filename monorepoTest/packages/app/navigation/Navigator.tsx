@@ -7,11 +7,13 @@ import { Button, Icon } from 'react-native-elements';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation-drawer';
 import { useDispatch } from 'react-redux';
 import { LogoutAction } from '@monorepo/reduxStore';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import DetailsScreen from '../screens/DetailsScreen';
 import HomeScreen from '../screens/HomeScreen';
 import RollCallScreen from '../screens/RollCallScreen';
 import Colors from '../constants/Colors';
 import LoginScreen from '../screens/LoginScreen';
+import AuthLoadingScreen from '../screens/AuthLoadingScreen';
 // import { LogoutAction } from '../redux/actions';
 
 const defaultStackNavOptions = {
@@ -106,8 +108,9 @@ const DrawerNavigator = createDrawerNavigator(
             <Button
               title="Logout"
               buttonStyle={{ backgroundColor: Colors.primaryColor }}
-              onPressIn={() => {
+              onPressIn={async () => {
                 dispatch(LogoutAction());
+                await AsyncStorage.setItem('isLoggedIn', 'false');
                 props.navigation.navigate('Auth');
               }}
             />
@@ -119,6 +122,7 @@ const DrawerNavigator = createDrawerNavigator(
 );
 
 const MainNavigator = createSwitchNavigator({
+  AuthLoading: AuthLoadingScreen,
   Auth: LoginStackNavigator,
   Home: DrawerNavigator,
 });
