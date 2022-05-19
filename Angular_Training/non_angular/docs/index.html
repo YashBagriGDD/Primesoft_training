@@ -1,71 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Index</title>
-    
-        <!-- Bootstrap CSS -->
-        <link href="./../styles/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
-    
-        <!--  Bootstrap JS  -->
-        <script src="./../js/bootstrap.bundle.js" crossorigin="anonymous"></script>
-    
-        <!--  Custom Style Sheet  -->
-        <link href="../styles/index.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container py-3">
-            <header id="headerBg">
-                <div class="align-items-center border-bottom d-flex flex-column flex-md-row mb-4 pb-3">
-                    <a href="#" class="align-items-center d-flex text-dark text-decoration-none" >
-                        <span class="fs-4">Header</span>
-                    </a>
-                    <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto text-center">
-                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Link 1</a>
-                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Link 2</a>
-                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Link 3</a>
-                        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Link 4</a>
-                        <a class="py-2 text-dark text-decoration-none" href="#">Link 5</a>
-                    </nav>
-                </div>
-            </header>
-            <main>
 
-            </main>
-            <footer class="border-top my-md-5 pt-4 pt-md-5 ">
-                <div class="row">
-                    <div class="col">
-                        <h5>Features</h5>
-                        <ul class="list-unstyled text-small">
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for developers</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
-                        </ul>
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="./../styles/bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!--  Bootstrap JS  -->
+    <script src="./../js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+
+    <!--  My imports  -->
+    <link href="../styles/index.css" rel="stylesheet">
+    <script src="../js/index.js"></script>
+</head>
+
+<body>
+    <div class="container py-3">
+        <header>
+            <div class="align-items-center border-bottom d-flex flex-column flex-md-row mb-4 pb-3">
+                <a href="#" class="align-items-center d-flex text-dark text-decoration-none">
+                    <span class="fs-4">Header</span>
+                </a>
+                <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto text-center">
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="./index.html">Link 1</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="./dummy.html">Link 2</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Link 3</a>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="#">Link 4</a>
+                    <a class="py-2 text-dark text-decoration-none" href="#">Link 5</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <!-- TODO: Add main content -->
+            <div class="col-md-7 col-lg-8 mx-auto">
+                <h4 class="mb-3">Billing Address</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Valid last name is required.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="username" class="form-label">Username</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="username" placeholder="Username" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Your username is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email <span
+                                    class="text-muted">(Optional)</span></label>
+                            <input type="email" class="form-control" id="email" placeholder="you@example.com" value="">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" placeholder="1234 Main St" value=""
+                                required>
+                            <div class="invalid-feedback">
+                                Please enter your shipping address.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="address2" class="form-label">Address 2 <span
+                                    class="text-muted">(Optional)</span></label>
+                            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite"
+                                value="">
+                        </div>
+                        <div class="col-md-5">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-select" id="country" required>
+                                <option value="">Choose...</option>
+                                <option>United States of America</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state" required>
+                                <option value="">Choose...</option>
+                                <option>California</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please provide a valid state.
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="zipcode" class="form-label">Zip</label>
+                            <input type="number" class="form-control" id="zipcode" placeholder="" value="" required>
+                            <div class="invalid-feedback">
+                                Zip code required.
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <h5>Resources</h5>
-                        <ul class="list-unstyled text-small">
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
-                        </ul>
-                    </div>
-                    <div class="col">
-                        <h5>About</h5>
-                        <ul class="list-unstyled text-small">
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
-                            <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
-                        </ul>
-                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="col-12 btn btn-primary btn-lg" type="submit">Continue</button>
+                </form>
+            </div>
+        </main>
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
                 </div>
-        </div>
-            </footer>
-        </div>
-    </body>
+                <div class="col-6 col-md">
+                    <h5>Features</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Cool stuff</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Random feature</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team feature</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Stuff for
+                                developers</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another one</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Last time</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a>
+                        </li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+                        <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
 </html>
