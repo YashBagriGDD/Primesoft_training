@@ -18,4 +18,10 @@ window.onload = function () {
       false
     );
   });
+
+  let sidbarButton = document.getElementById("sidebarButton");
+
+  sidbarButton.addEventListener("click", () => {
+    console.log("Pressed!");
+  });
 };
