@@ -19,9 +19,10 @@ window.onload = function () {
     );
   });
 
-  let sidbarButton = document.getElementById("sidebarButton");
+  // let sidebarButton = document.getElementById("sidebarCollapse");
 
-  sidbarButton.addEventListener("click", () => {
-    console.log("Pressed!");
-  });
+  // sidebarButton.addEventListener("click", () => {
+  //   console.log("Pressed!");
+  //   sidebarButton.classList.toggle("active");
+  // });
 };

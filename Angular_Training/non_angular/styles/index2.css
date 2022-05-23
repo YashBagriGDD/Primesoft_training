@@ -1,0 +1,146 @@
+body {
+    background-image: linear-gradient(180deg, #EEE, #FFF 100px, #FFF);
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-width: none;
+    align-items: stretch;
+}
+
+#sidebarButton {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+
+#content {
+    width: 100%;
+    min-height: 100vh;
+}
+
+#headerBg {
+    background-color: #826EEF;
+}
+
+/* Sidebar
+ Sidebar css from: 
+    https://bootstrapious.com/p/bootstrap-sidebar
+*/
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #889ae8;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #7386D5;
+    background: #fff;
+}
+
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #6d7fcc;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+a.article,
+a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+/* Collapsing CSS from: https://stackoverflow.com/questions/47738975/customizing-the-collapse-transition-in-bootstrap-4 */
+.collapse {
+    visibility: hidden;
+  }
+  .collapse.show {
+    visibility: visible;
+    display: block;
+  }
+  .collapsing {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition-property: height, visibility;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+  .collapsing.width {
+    transition-property: width, visibility;
+    width: 0;
+    height: auto;
+  }
