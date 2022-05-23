@@ -51,9 +51,10 @@
             <div id="headerArea">
                 <div class="align-items-center border-bottom d-flex flex-row mb-4 pb-3 px-2">
                     <div class="me-2">
+                        <!-- TODO: Apply animation to load in left to right -->
                         <button aria-expanded="false" aria-controls="sidebar" aria-label="Sidebar Button"
-                            class="btn btn-light" data-bs-toggle="collapse" data-bs-target="#sidebar" id="sidebarButton"
-                            type="button">
+                            class="btn btn-lg btn-light" data-bs-toggle="collapse" data-bs-target="#sidebar"
+                            id="sidebarButton" type="button">
                             <i class="bi bi-list"></i>
                         </button>
                     </div>
@@ -61,38 +62,46 @@
                         <span class="fs-4">Header</span>
                     </a>
                     <div class="d-inline-flex mt-2 mt-0 ms-auto text-center">
-                        <i class="bi bi-badge-hd-fill"></i>
+                        <span class="pe-2">Username</span>
+                        <i class="bi bi-person-circle"></i>
                     </div>
                 </div>
             </div>
 
             <div>
                 <!-- Table stuff -->
+                <!-- FIXME: Populate table from JSON file -->
+                <!-- TODO: Pagination, sorting -->
                 <table class="table table-striped table-responsive">
-                    <tr class="table-dark">
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Height</th>
-                        <th>Weight</th>
-                    </tr>
-                    <tr>
-                        <th>Yash</th>
-                        <th>Bagri</th>
-                        <th>999</th>
-                        <th>999</th>
-                    </tr>
-                    <tr>
-                        <th>Yash</th>
-                        <th>Bagri</th>
-                        <th>999</th>
-                        <th>999</th>
-                    </tr>
-                    <tr>
-                        <th>Yash</th>
-                        <th>Bagri</th>
-                        <th>999</th>
-                        <th>999</th>
-                    </tr>
+                    <thead>
+                        <tr class="table-dark">
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Height</th>
+                            <th>Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Yash</td>
+                            <td>BagriiiiiiiiiiiiiiiiiiiiiiiiiiiBagriiiiiiiiiiiiiiiiiiiiiiiiiiiBagriiiiiiiiiiiiiiiiiiiiiiiiiii
+                            </td>
+                            <td>999</td>
+                            <td>999</td>
+                        </tr>
+                        <tr>
+                            <td>Yash</td>
+                            <td>Bagri</td>
+                            <td>999</td>
+                            <td>999</td>
+                        </tr>
+                        <tr>
+                            <td>Yash</td>
+                            <td>Bagri</td>
+                            <td>999</td>
+                            <td>999</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
 

@@ -8,7 +8,7 @@ window.onload = function () {
     form.addEventListener(
       "submit",
       (e) => {
-        if (form.checkValidity() == false) {
+        if (!form.checkValidity()) {
           e.preventDefault();
           e.stopPropagation();
         }
