@@ -6,6 +6,28 @@ $(document).ready(function () {
     console.log("An error has ocurred");
   });
 
+  $.getJSON("https://dummyjson.com/users", (data) => {
+    let items = [];
+    let line = "";
+    let maxNum = 15;
+
+    for (let i = 0; i < maxNum; i++) {
+      line += `<td class='table-item'>${data.users[i].firstName}</td>`;
+      line += `<td class='table-item'>${data.users[i].lastName}</td>`;
+      line += `<td class='table-item'>${data.users[i].age}</td>`;
+      line += `<td class='table-item'>${data.users[i].username}</td>`;
+      line += `<td class='table-item'>${data.users[i].birthDate}</td>`;
+
+      let $tr = $("<tr>").attr({ class: "table-row-item" }).append(line);
+      items.push($tr);
+      line = "";
+    }
+
+    $("#table2Body").append(items);
+  }).fail(() => {
+    console.log("Failed to fetch users api");
+  });
+
   const populateTable = (data, tableBodyId) => {
     let items = [];
     let line;
@@ -63,4 +85,14 @@ $(document).ready(function () {
   function TableCellValue(row, index) {
     return $(row).children("td").eq(index).text();
   }
+
+  //Table pagination
+  //
+  $("table").tablePagination({
+    perPage: 10,
+    initPage: 1,
+    position: "bottom",
+    showAllButton: false,
+    paginationClass: "tablePagination",
+  });
 });
