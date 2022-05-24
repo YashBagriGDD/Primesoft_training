@@ -1,23 +1,25 @@
 $(document).ready(function () {
   // Populate table with JSON
   $.getJSON("../assets/Data.json", (data) => {
+    populateTable(data, "table1Body");
+  }).fail(() => {
+    console.log("An error has ocurred");
+  });
+
+  const populateTable = (data, tableBodyId) => {
     let items = [];
     let line;
-    $.each(data, (index, value) => {
-      line = "<td class='table-item-first-name'>" + value.firstName + "</td>";
-      line += "<td class='table-item-last-name'>" + value.lastName + "</td>";
-      line += "<td class='table-item-age'>" + value.age + "</td>";
-      line += "<td class='table-item-height'>" + value.height + "</td>";
-      line += "<td class='table-item-weight'>" + value.weight + "</td>";
+    $.each(data, (_index, obj) => {
+      line = $.map(obj, (value, key) => {
+        return `<td class='table-item-${key}'>${value}</td>`;
+      });
 
       let $tr = $("<tr>").attr({ class: "table-row-item" }).append(line);
       items.push($tr);
     });
 
-    $("#tableBody").append(items);
-  }).fail(() => {
-    console.log("An error has ocurred");
-  });
+    $("#" + tableBodyId).append(items);
+  };
 
   // Table sort from:
   // https://orangeable.com/javascript/jquery-table-sorting#:~:text=%20jQuery%20Table%20Sorting%3A%20Sort%20Data%20on%20Header,function%20call%20in%20our%20click%20event...%20More%20
