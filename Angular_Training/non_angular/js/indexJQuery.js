@@ -17,15 +17,18 @@ $(document).ready(function () {
     $("#" + tableBodyId).html(items);
   };
 
-  const populateTable1 = (offset = 0) => {
+  const populateTable1 = (offset = 0, isFirst = true) => {
     $.getJSON("../assets/Data.json", (data) => {
       populateTable(data.slice(offset, offset + MAX_PER_PAGE), "table1Body");
+
+      pageCount = Math.ceil(data.length / MAX_PER_PAGE);
+      if (isFirst) populatePages(pageCount, "table1Pagination");
     }).fail(() => {
       console.log("An error has ocurred");
     });
   };
 
-  const populateTable2 = (offset = 0) => {
+  const populateTable2 = (offset = 0, isFirst = true) => {
     $.getJSON(
       `https://dummyjson.com/users?skip=${offset}&limit=${MAX_PER_PAGE}`,
       (data) => {
@@ -45,10 +48,26 @@ $(document).ready(function () {
         });
 
         $("#table2Body").html(items);
+
+        pageCount = Math.ceil(30 / data.users.length);
+        if (isFirst) populatePages(pageCount, "table2Pagination");
       }
     ).fail(() => {
       console.log("Failed to fetch users api");
     });
+  };
+
+  const populatePages = (pageCount, pageId) => {
+    let line = "";
+
+    for (let i = 1; i <= pageCount; i++) {
+      if (i == 1)
+        line += `<li class="page-item active"><a class="page-link" href="#">${i}</a></li>`;
+      else
+        line += `<li class="page-item"><a class="page-link" href="#">${i}</a></li>`;
+    }
+
+    $("#" + pageId).html(line);
   };
 
   // Table sort from:
@@ -98,17 +117,17 @@ $(document).ready(function () {
   populateTable1();
   populateTable2();
 
-  $("#table1Pagination li").click((e) => {
+  $(document).on("click", "#table1Pagination li", (e) => {
     e.preventDefault();
     $("#table1Pagination li").removeClass("active");
     $(e.target).parent().addClass("active");
-    populateTable1((e.target.text - 1) * MAX_PER_PAGE);
+    populateTable1((e.target.text - 1) * MAX_PER_PAGE, false);
   });
 
-  $("#table2Pagination li").click((e) => {
+  $(document).on("click", "#table2Pagination li", (e) => {
     e.preventDefault();
     $("#table2Pagination li").removeClass("active");
     $(e.target).parent().addClass("active");
-    populateTable2((e.target.text - 1) * MAX_PER_PAGE);
+    populateTable2((e.target.text - 1) * MAX_PER_PAGE, false);
   });
 });
