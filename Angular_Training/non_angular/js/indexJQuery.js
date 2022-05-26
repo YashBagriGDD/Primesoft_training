@@ -1,32 +1,14 @@
 $(document).ready(function () {
+  const MAX_PER_PAGE = 10;
+
   // Populate table with JSON
-  $.getJSON("../assets/Data.json", (data) => {
-    populateTable(data, "table1Body");
-  }).fail(() => {
-    console.log("An error has ocurred");
-  });
-
-  $.getJSON("https://dummyjson.com/users", (data) => {
-    let items = [];
-    let line = "";
-    let maxNum = 15;
-
-    for (let i = 0; i < maxNum; i++) {
-      line += `<td class='table-item'>${data.users[i].firstName}</td>`;
-      line += `<td class='table-item'>${data.users[i].lastName}</td>`;
-      line += `<td class='table-item'>${data.users[i].age}</td>`;
-      line += `<td class='table-item'>${data.users[i].username}</td>`;
-      line += `<td class='table-item'>${data.users[i].birthDate}</td>`;
-
-      let $tr = $("<tr>").attr({ class: "table-row-item" }).append(line);
-      items.push($tr);
-      line = "";
-    }
-
-    $("#table2Body").append(items);
-  }).fail(() => {
-    console.log("Failed to fetch users api");
-  });
+  const populateTable1 = (offset = 0) => {
+    $.getJSON("../assets/Data.json", (data) => {
+      populateTable(data.slice(offset, offset + MAX_PER_PAGE), "table1Body");
+    }).fail(() => {
+      console.log("An error has ocurred");
+    });
+  };
 
   const populateTable = (data, tableBodyId) => {
     let items = [];
@@ -40,7 +22,33 @@ $(document).ready(function () {
       items.push($tr);
     });
 
-    $("#" + tableBodyId).append(items);
+    $("#" + tableBodyId).html(items);
+  };
+
+  const populateTable2 = (offset = 0) => {
+    $.getJSON(
+      `https://dummyjson.com/users?skip=${offset}&limit=${MAX_PER_PAGE}`,
+      (data) => {
+        let items = [];
+        let line = "";
+
+        $.each(data.users, (_i, obj) => {
+          line += `<td class='table-item'>${obj.firstName}</td>`;
+          line += `<td class='table-item'>${obj.lastName}</td>`;
+          line += `<td class='table-item'>${obj.age}</td>`;
+          line += `<td class='table-item'>${obj.username}</td>`;
+          line += `<td class='table-item'>${obj.birthDate}</td>`;
+
+          let $tr = $("<tr>").attr({ class: "table-row-item" }).append(line);
+          items.push($tr);
+          line = "";
+        });
+
+        $("#table2Body").html(items);
+      }
+    ).fail(() => {
+      console.log("Failed to fetch users api");
+    });
   };
 
   // Table sort from:
@@ -87,12 +95,20 @@ $(document).ready(function () {
   }
 
   //Table pagination
-  //
-  $("table").tablePagination({
-    perPage: 10,
-    initPage: 1,
-    position: "bottom",
-    showAllButton: false,
-    paginationClass: "tablePagination",
+  populateTable1();
+  populateTable2();
+
+  $("#table1Pagination li").click((e) => {
+    e.preventDefault();
+    $("#table1Pagination li").removeClass("active");
+    $(e.target).parent().addClass("active");
+    populateTable1((e.target.text - 1) * MAX_PER_PAGE);
+  });
+
+  $("#table2Pagination li").click((e) => {
+    e.preventDefault();
+    $("#table2Pagination li").removeClass("active");
+    $(e.target).parent().addClass("active");
+    populateTable2((e.target.text - 1) * MAX_PER_PAGE);
   });
 });
