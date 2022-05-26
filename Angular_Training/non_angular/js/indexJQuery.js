@@ -1,15 +1,7 @@
 $(document).ready(function () {
-  const MAX_PER_PAGE = 10;
+  const MAX_PER_PAGE = 5;
 
   // Populate table with JSON
-  const populateTable1 = (offset = 0) => {
-    $.getJSON("../assets/Data.json", (data) => {
-      populateTable(data.slice(offset, offset + MAX_PER_PAGE), "table1Body");
-    }).fail(() => {
-      console.log("An error has ocurred");
-    });
-  };
-
   const populateTable = (data, tableBodyId) => {
     let items = [];
     let line;
@@ -23,6 +15,14 @@ $(document).ready(function () {
     });
 
     $("#" + tableBodyId).html(items);
+  };
+
+  const populateTable1 = (offset = 0) => {
+    $.getJSON("../assets/Data.json", (data) => {
+      populateTable(data.slice(offset, offset + MAX_PER_PAGE), "table1Body");
+    }).fail(() => {
+      console.log("An error has ocurred");
+    });
   };
 
   const populateTable2 = (offset = 0) => {
