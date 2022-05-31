@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  const MAX_PER_PAGE = 5;
+  const MAX_PER_PAGE = 10;
 
   // Populate table with JSON
   const populateTable = (data, tableBodyId) => {
