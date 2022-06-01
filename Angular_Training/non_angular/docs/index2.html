@@ -161,12 +161,93 @@
                 </div>
             </div>
 
+            <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="table1Submit" tabindex="-1"
+                aria-labelledby="table1Submit" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Entry</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <form class="needs-validation" id="modalForm" novalidate>
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" minlength="2"
+                                                placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                Valid first name is required.
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" minlength="2"
+                                                placeholder="" value="" required>
+                                            <div class="invalid-feedback">
+                                                Valid last name is required.
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="ageInput" class="form-label">Age</label>
+                                            <input type="number" class="form-control" id="ageInput" placeholder=""
+                                                value="" required>
+                                            <div class="invalid-feedback">Age required</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="heightInput" class="form-label">Height</label>
+                                            <input type="number" class="form-control" id="heightInput" placeholder=""
+                                                value="" required>
+                                            <div class="invalid-feedback">Height required</div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="weightInput" class="form-label">Weight</label>
+                                            <input type="number" class="form-control" id="weightInput" placeholder=""
+                                                value="" required>
+                                            <div class="invalid-feedback">Weight required</div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+                                id="formSubmit">Submit</button>
+                            <button type="button" class="btn btn-secondary" data-bs-target="#closeModal"
+                                data-bs-toggle="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" id="closeModal" tabindex="-1"
+                aria-labelledby="closeModal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Are you sure?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Yes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-target="#table1Submit"
+                                data-bs-toggle="modal">No</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Table stuff -->
             <div>
                 <button type="button" class="btn btn-primary mb-1 ps-auto" data-bs-toggle="modal"
                     data-bs-target="#table1Export">
                     Export Table
                 </button>
+                <button type="button" class="btn btn-primary mb-1 ps-auto" data-bs-toggle="modal"
+                    data-bs-target="#table1Submit">
+                    Add Entry
+                </button>
+                <div id="successArea"></div>
                 <div class="table-responsive">
                     <table class="table table-striped paginated" id="table1">
                         <thead>

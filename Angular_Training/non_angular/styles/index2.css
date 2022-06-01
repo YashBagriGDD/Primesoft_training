@@ -17,6 +17,13 @@ a:focus {
     align-items: stretch;
 }
 
+.success-message {
+    color: green;
+    display: flex;
+    padding: .5rem;
+    justify-content: center;
+}
+
 #sidebarButton {
     box-shadow: none;
     outline: none !important;

@@ -130,4 +130,14 @@ $(document).ready(function () {
     $(e.target).parent().addClass("active");
     populateTable2((e.target.text - 1) * MAX_PER_PAGE, false);
   });
+
+  $("#formSubmit").on("click", (e) => {
+    let $span = $("<span>")
+      .attr({ class: "success-message" })
+      .html("Sucessfully added data.")
+      .delay(3000)
+      .fadeOut(500);
+
+    $("#successArea").html($span);
+  });
 });
