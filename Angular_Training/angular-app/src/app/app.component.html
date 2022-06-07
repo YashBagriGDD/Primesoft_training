@@ -3,8 +3,15 @@
   <input aria-label="input" class="form-control" id="name" name="name" type="text" [(ngModel)]="name" />
 </form>
 <span>
-  <p class="ps-2">{{name}}</p>
+  <p class="ps-2">Name: {{name}}</p>
+  <button class="btn btn-warning mt-1 ms-2" [disabled]="name === ''" (click)="name = ''">Reset Name</button>
 </span>
+<div class="row">
+  <span class="mt-1 ms-2">
+    <button class="btn btn-primary" (click)="AddClick()">Click Me!</button>
+    <p class="pt-1 ps-2">{{ numOfClicks }}</p>
+  </span>
+</div>
 <hr>
 <app-checkout></app-checkout>
 

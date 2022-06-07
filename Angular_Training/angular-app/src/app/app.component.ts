@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-app';
   name = `Yash`;
+  numOfClicks = 0;
+
+  AddClick() {
+    this.numOfClicks++;
+  }
 }
