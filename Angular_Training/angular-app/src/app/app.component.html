@@ -2,7 +2,7 @@
   <label for="name" class="form-label">Name</label>
   <input aria-label="input" class="form-control" id="name" name="name" type="text" [(ngModel)]="name" />
 </form>
-<span>0
+<span>
   <p class="ps-2">Name: {{name}}</p>
   <button class="btn btn-warning mt-1 ms-2" [disabled]="name === ''" (click)="name = ''">Reset Name</button>
 </span>

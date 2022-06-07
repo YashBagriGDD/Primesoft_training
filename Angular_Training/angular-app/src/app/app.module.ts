@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { InputAtomComponent } from './input-atom/input-atom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    InputAtomComponent
   ],
   imports: [
     BrowserModule,
