@@ -11,7 +11,8 @@ export class InputAtomComponent implements OnInit {
   @Input() idName!: string;
   @Input() placeholder: string;
   @Input() isRequired: boolean;
-  @Input() value: string;
+  @Input() count!: any;
+  public value: string;
 
   constructor() {
     this.type = 'text';
