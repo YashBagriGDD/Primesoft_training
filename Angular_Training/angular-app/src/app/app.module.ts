@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { InputAtomComponent } from './input-atom/input-atom.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CheckoutComponent,
-    InputAtomComponent
+    InputAtomComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
