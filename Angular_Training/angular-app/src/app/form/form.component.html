@@ -1,5 +1,5 @@
 <div class="row g-6">
-    <form class="needs-validation" id="signUpForm" (ngSubmit)="validateForm()" #f="ngForm">
+    <form class="needs-validation" id="signUpForm" (ngSubmit)="validateForm(f)" #f="ngForm">
         <!-- <div class="row"> -->
         <app-input-atom class="col-md-6" idName="firstName" name="First Name"></app-input-atom>
         <app-input-atom class="col-md-6" idName="lastName" name="Last Name"></app-input-atom>

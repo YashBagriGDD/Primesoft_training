@@ -13,8 +13,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  validateForm() {
-    console.log(this.signUpForm);
+  validateForm(f: NgForm) {
+    console.log(f.value);
     let form = document.getElementById('signUpForm') as HTMLFormElement;
     if (form.checkValidity() === false) {
       event?.preventDefault();
