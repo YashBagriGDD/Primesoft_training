@@ -1,6 +1,8 @@
-<label [for]="idName" class="form-label"><span *ngIf="isRequired">*</span>{{name}}</label>
-<input [(ngModel)]="value" title="{{value}}" [type]="type" class="form-control" [id]="idName"
-    [placeholder]="placeholder" [required]="isRequired">
-<div class="invalid-feedback">
-    {{ name }} is required.
+<div class="form-group">
+    <label [for]="idName" class="form-label"><span *ngIf="isRequired">*</span>{{name}}</label>
+    <input [(ngModel)]="value" title="{{value}}" [type]="type" class="form-control" [id]="idName" [name]="idName"
+        [placeholder]="placeholder" [required]="isRequired">
+    <div class="invalid-feedback">
+        {{ name }} is required.
+    </div>
 </div>

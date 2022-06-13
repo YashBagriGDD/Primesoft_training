@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
+  @ViewChild('f') signUpForm!: NgForm;
+
   constructor() {}
 
   ngOnInit(): void {}
 
   validateForm() {
+    console.log(this.signUpForm);
     let form = document.getElementById('signUpForm') as HTMLFormElement;
     if (form.checkValidity() === false) {
       event?.preventDefault();

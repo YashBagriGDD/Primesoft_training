@@ -1,11 +1,11 @@
 <div class="row g-6">
-    <form class="needs-validation" id="signUpForm">
+    <form class="needs-validation" id="signUpForm" (ngSubmit)="validateForm()" #f="ngForm">
         <!-- <div class="row"> -->
         <app-input-atom class="col-md-6" idName="firstName" name="First Name"></app-input-atom>
         <app-input-atom class="col-md-6" idName="lastName" name="Last Name"></app-input-atom>
         <!-- </div> -->
         <app-input-atom class="col-12" idName="username" name="Username"></app-input-atom>
         <app-input-atom class="col-12" id="password" name="Password" type="password"></app-input-atom>
-        <button class="btn btn-primary col-12 mt-3" (click)="validateForm()" type="button">Submit</button>
+        <button class="btn btn-primary col-12 mt-3" type="submit">Submit</button>
     </form>
 </div>
