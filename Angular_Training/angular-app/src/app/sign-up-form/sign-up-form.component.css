@@ -1,3 +1,12 @@
 input.ng-invalid.ng-touched {
     border: 1px solid red;
 }
+
+form div.form-group label,
+.app-title  {
+  font-weight: bold;
+}
+
+.help-block {
+  color: red;
+}

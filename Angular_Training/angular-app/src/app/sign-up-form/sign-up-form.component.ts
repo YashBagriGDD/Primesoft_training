@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignUpFormComponent implements OnInit {
   signUpForm!: FormGroup;
-  genders: string[] = ['male', 'female', 'other'];
+  genders: string[] = ['Male', 'Female', 'Other'];
 
   constructor() {}
 
@@ -21,7 +21,7 @@ export class SignUpFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
       ]),
-      gender: new FormControl('male'),
+      gender: new FormControl('Other'),
     });
   }
 
