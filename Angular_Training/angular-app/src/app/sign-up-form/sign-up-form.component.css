@@ -3,7 +3,7 @@ input.ng-invalid.ng-touched {
 }
 
 form div.form-group label,
-.app-title  {
+.form-title  {
   font-weight: bold;
 }
 
