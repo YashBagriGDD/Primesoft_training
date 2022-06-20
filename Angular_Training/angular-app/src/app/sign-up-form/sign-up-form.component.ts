@@ -55,16 +55,23 @@ export class SignUpFormComponent implements OnInit {
   }
 
   clearForm() {
-    this.signUpForm.reset();
+    this.isSubmitted = false;
+    this.signUpForm.reset({ gender: 'Other' });
   }
 
   testUsername(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      const value = <string>control.value;
+      if (control.value !== null) {
+        let value = <string>control.value;
+        value = value.trim();
 
-      if (this.forbiddenWords.indexOf(value) === -1) return null;
+        if (this.forbiddenWords.indexOf(value.toLowerCase()) === -1)
+          return null;
 
-      return { forbiddenWord: true };
+        return { forbiddenWord: true };
+      }
+
+      return null;
     };
   }
 

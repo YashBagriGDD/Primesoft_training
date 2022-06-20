@@ -1,75 +1,84 @@
-<form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-    <div class="form-group col-md-6 pb-2">
-      <label for="firstName">
-        <span *ngIf="signUpForm.get('firstName')?.validator !== null">*</span>First Name
-      </label>
-      <input class="form-control" type="text" id="firstName" formControlName="firstName">
-      <span class="help-block" *ngIf="!signUpForm.get('firstName')?.valid && isSubmitted">
-        Please enter a first name.
-      </span>
-    </div>
-    <div class="form-group col-md-6 pb-2">
-      <label for="lastName"><span *ngIf="signUpForm.get('lastName')?.validator !== null">*</span>Last Name</label>
-      <input class="form-control" type="text" id="lastName" formControlName="lastName">
-      <span class="help-block" *ngIf="!signUpForm.get('lastName')?.valid && isSubmitted">
-        Please enter a last name.
-      </span>
-    </div>
-  </div>
-  <div class="form-group pb-2">
-    <label for="formAge"><span *ngIf="signUpForm.get('age')?.validator !== null">*</span>Age</label>
-    <input class="form-control" type="number" id="formAge" formControlName="age">
-  </div>
-  <div class="form-group pb-2">
-    <label for="formAddress"><span *ngIf="signUpForm.get('address')?.validator !== null">*</span>Address</label>
-    <textarea class="form-control" formControlName="address" id="formAddress" rows="3"></textarea>
-  </div>
-  <div class="form-group pb-2">
-    <label for="username"><span *ngIf="signUpForm.get('username')?.validator !== null">*</span>Username</label>
-    <input class="form-control" type="text" id="username" formControlName="username">
-    <span class="help-block" *ngIf="!signUpForm.get('username')?.valid && isSubmitted">
-      Please enter a valid username.
-    </span>
-  </div>
-  <div class="form-group pb-2">
-    <label for="password"><span *ngIf="signUpForm.get('password')?.validator !== null">*</span>Password</label>
-    <input class="form-control" type="password" id="password" formControlName="password">
-    <div class="help-block" *ngIf="signUpForm.get('password')?.errors && isSubmitted">
-      <span *ngIf="signUpForm.get('password')?.errors!['required']; else passPresent">Please enter a valid
-        password</span>
-      <ng-template #passPresent>
-        <div *ngIf="signUpForm.get('password')?.errors!['minlength']">
-          <span>Password must be at least 8 characters long.</span>
-        </div>
-        <div *ngIf="signUpForm.get('password')?.errors!['noLower']">
-          <span>Password must contain a lowercase letter.</span>
-        </div>
-        <div *ngIf="signUpForm.get('password')?.errors!['noUpper']">
-          <span>Password must contain a uppercase letter.</span>
-        </div>
-        <div *ngIf="signUpForm.get('password')?.errors!['noDigit']">
-          <span>Password must contain a digit.</span>
-        </div>
-        <div *ngIf="signUpForm.get('password')?.errors!['noSpecial']">
-          <span>Password must contain a special character.</span>
-        </div>
-      </ng-template>
-    </div>
-  </div>
-  <div>
-    <span class="form-title">Gender:</span>
-    <div class="pt-1 ps-2">
-      <div class="form-check" *ngFor="let gender of genders">
-        <label>
-          <input class="form-check-input" type="radio" [value]="gender" [id]="gender" formControlName="gender">
-          <label class="form-check-label" [for]="gender">{{ gender }}</label>
+<div class="container">
+  <app-checkout name="Sign Up Form"></app-checkout>
+  <hr>
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="form-group col-md-6 pb-2">
+        <label for="firstName">
+          <span *ngIf="signUpForm.get('firstName')?.validator !== null">*</span>First Name
         </label>
+        <input class="form-control" type="text" id="firstName" formControlName="firstName">
+        <span class="help-block"
+          *ngIf="signUpForm.get('firstName')?.errors && signUpForm.get('firstName')?.errors!['required'] && (isSubmitted || signUpForm.get('firstName')?.touched)">
+          Please enter a first name.
+        </span>
+      </div>
+      <div class="form-group col-md-6 pb-2">
+        <label for="lastName"><span *ngIf="signUpForm.get('lastName')?.validator !== null">*</span>Last Name</label>
+        <input class="form-control" type="text" id="lastName" formControlName="lastName">
+        <span class="help-block"
+          *ngIf="signUpForm.get('lastName')?.errors && signUpForm.get('lastName')?.errors!['required'] && (isSubmitted || signUpForm.get('lastName')?.touched)">
+          Please enter a last name.
+        </span>
       </div>
     </div>
-  </div>
-  <div class="d-flex justify-content-end">
-    <button class="btn btn-outline-danger mt-2 me-2" type="button" (click)="clearForm()">Clear</button>
-    <button class="btn btn-primary mt-2" type="submit">Submit</button>
-  </div>
-</form>
+    <div class="form-group pb-2">
+      <label for="formAge"><span *ngIf="signUpForm.get('age')?.validator !== null">*</span>Age</label>
+      <input class="form-control" type="number" id="formAge" formControlName="age">
+    </div>
+    <div class="form-group pb-2">
+      <label for="formAddress"><span *ngIf="signUpForm.get('address')?.validator !== null">*</span>Address</label>
+      <textarea class="form-control" formControlName="address" id="formAddress" rows="3"></textarea>
+    </div>
+    <div class="form-group pb-2">
+      <label for="username"><span *ngIf="signUpForm.get('username')?.validator !== null">*</span>Username</label>
+      <input class="form-control" type="text" id="username" formControlName="username">
+      <span class="help-block"
+        *ngIf="signUpForm.get('username')?.invalid && (isSubmitted || signUpForm.get('username')?.touched)">
+        Please enter a valid username.
+      </span>
+    </div>
+    <div class="form-group pb-2">
+      <label for="password"><span *ngIf="signUpForm.get('password')?.validator !== null">*</span>Password</label>
+      <input class="form-control" type="password" id="password" formControlName="password">
+      <div class="help-block"
+        *ngIf="signUpForm.get('password')?.errors && (isSubmitted || signUpForm.get('password')?.touched)">
+        <span *ngIf="signUpForm.get('password')?.errors!['required']; else passPresent">Please enter a valid
+          password</span>
+        <ng-template #passPresent>
+          <div *ngIf="signUpForm.get('password')?.errors!['minlength']">
+            <span>Password must be at least 8 characters long.</span>
+          </div>
+          <div *ngIf="signUpForm.get('password')?.errors!['noLower']">
+            <span>Password must contain a lowercase letter.</span>
+          </div>
+          <div *ngIf="signUpForm.get('password')?.errors!['noUpper']">
+            <span>Password must contain a uppercase letter.</span>
+          </div>
+          <div *ngIf="signUpForm.get('password')?.errors!['noDigit']">
+            <span>Password must contain a digit.</span>
+          </div>
+          <div *ngIf="signUpForm.get('password')?.errors!['noSpecial']">
+            <span>Password must contain a special character.</span>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+    <div>
+      <span class="form-title">Gender:</span>
+      <div class="pt-1 ps-2">
+        <div class="form-check" *ngFor="let gender of genders">
+          <label>
+            <input class="form-check-input" type="radio" [value]="gender" [id]="gender" formControlName="gender">
+            <label class="form-check-label" [for]="gender">{{ gender }}</label>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end">
+      <a class="btn btn-info mt-2 me-2" role="button" routerLink="/users">User Data</a>
+      <button class="btn btn-outline-danger mt-2 me-2" type="button" (click)="clearForm()">Clear</button>
+      <button class="btn btn-primary mt-2" type="submit">Submit</button>
+    </div>
+  </form>
+</div>
