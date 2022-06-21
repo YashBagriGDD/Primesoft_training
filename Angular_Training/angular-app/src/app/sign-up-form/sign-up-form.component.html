@@ -9,7 +9,7 @@
         </label>
         <input class="form-control" type="text" id="firstName" formControlName="firstName">
         <span class="help-block"
-          *ngIf="signUpForm.get('firstName')?.errors && signUpForm.get('firstName')?.errors!['required'] && (isSubmitted || signUpForm.get('firstName')?.touched)">
+          *ngIf="signUpForm.get('firstName')?.errors && signUpForm.get('firstName')?.errors!['required'] && signUpForm.get('firstName')?.touched">
           Please enter a first name.
         </span>
       </div>
@@ -17,7 +17,7 @@
         <label for="lastName"><span *ngIf="signUpForm.get('lastName')?.validator !== null">*</span>Last Name</label>
         <input class="form-control" type="text" id="lastName" formControlName="lastName">
         <span class="help-block"
-          *ngIf="signUpForm.get('lastName')?.errors && signUpForm.get('lastName')?.errors!['required'] && (isSubmitted || signUpForm.get('lastName')?.touched)">
+          *ngIf="signUpForm.get('lastName')?.errors && signUpForm.get('lastName')?.errors!['required'] && signUpForm.get('lastName')?.touched">
           Please enter a last name.
         </span>
       </div>
@@ -33,16 +33,14 @@
     <div class="form-group pb-2">
       <label for="username"><span *ngIf="signUpForm.get('username')?.validator !== null">*</span>Username</label>
       <input class="form-control" type="text" id="username" formControlName="username">
-      <span class="help-block"
-        *ngIf="signUpForm.get('username')?.invalid && (isSubmitted || signUpForm.get('username')?.touched)">
+      <span class="help-block" *ngIf="signUpForm.get('username')?.invalid && signUpForm.get('username')?.touched">
         Please enter a valid username.
       </span>
     </div>
     <div class="form-group pb-2">
       <label for="password"><span *ngIf="signUpForm.get('password')?.validator !== null">*</span>Password</label>
       <input class="form-control" type="password" id="password" formControlName="password">
-      <div class="help-block"
-        *ngIf="signUpForm.get('password')?.errors && (isSubmitted || signUpForm.get('password')?.touched)">
+      <div class="help-block" *ngIf="signUpForm.get('password')?.errors && signUpForm.get('password')?.touched">
         <span *ngIf="signUpForm.get('password')?.errors!['required']; else passPresent">Please enter a valid
           password</span>
         <ng-template #passPresent>

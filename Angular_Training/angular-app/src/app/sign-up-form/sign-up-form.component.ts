@@ -17,7 +17,6 @@ import {
 export class SignUpFormComponent implements OnInit {
   signUpForm!: FormGroup;
   genders: string[] = ['Male', 'Female', 'Other'];
-  isSubmitted!: boolean;
   forbiddenWords: string[] = ['admin', 'test'];
 
   //regexp
@@ -45,23 +44,34 @@ export class SignUpFormComponent implements OnInit {
       age: new FormControl(null),
       address: new FormControl(null),
     });
-
-    this.isSubmitted = false;
   }
 
   onSubmit() {
-    this.isSubmitted = true;
     console.log(this.signUpForm);
+    this.signUpForm.markAllAsTouched();
+
+    if (this.signUpForm.valid) {
+      let formData = {
+        firstName: this.signUpForm.get('firstName')?.value,
+        lastName: this.signUpForm.get('lastName')?.value,
+        username: this.signUpForm.get('username')?.value,
+        password: this.signUpForm.get('password')?.value,
+        gender: this.signUpForm.get('gender')?.value,
+        age: this.signUpForm.get('age')?.value,
+        address: this.signUpForm.get('address')?.value,
+      };
+
+      console.log(formData);
+    }
   }
 
   clearForm() {
-    this.isSubmitted = false;
     this.signUpForm.reset({ gender: 'Other' });
   }
 
   testUsername(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-      if (control.value !== null) {
+      if (control.value) {
         let value = <string>control.value;
         value = value.trim();
 
