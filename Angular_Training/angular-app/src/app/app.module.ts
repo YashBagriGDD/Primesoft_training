@@ -9,6 +9,7 @@ import { InputAtomComponent } from './input-atom/input-atom.component';
 import { FormComponent } from './form/form.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { UserDataComponent } from './user-data/user-data.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
