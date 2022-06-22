@@ -8,6 +8,8 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { addUserData } from './store/sign-up-form.actions';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -25,7 +27,7 @@ export class SignUpFormComponent implements OnInit {
   oneDigit: RegExp = /^(?=.*\d)/;
   oneSpecialChar: RegExp = /^(?=.*[\W])/;
 
-  constructor() {}
+  constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -61,7 +63,7 @@ export class SignUpFormComponent implements OnInit {
         address: this.signUpForm.get('address')?.value,
       };
 
-      console.log(formData);
+      this.store.dispatch(addUserData(formData));
     }
   }
 
