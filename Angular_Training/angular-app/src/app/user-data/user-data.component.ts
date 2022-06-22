@@ -11,13 +11,19 @@ import { UserData } from '../sign-up-form/store/sign-up-form.model';
   styleUrls: ['./user-data.component.css'],
 })
 export class UserDataComponent implements OnInit {
-  users$: Observable<UserData[]>;
+  users: UserData[];
 
   constructor(private store: Store) {
-    this.users$ = this.store.pipe(select(selectUserData));
+    this.users = this.getValue(this.store.pipe(select(selectUserData)));
   }
 
   ngOnInit(): void {
-    console.log(this.users$);
+    console.log(this.users);
+  }
+
+  getValue(obj: Observable<any>) {
+    let value: any;
+    obj.subscribe((v) => (value = v));
+    return value;
   }
 }

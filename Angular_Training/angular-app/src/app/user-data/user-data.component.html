@@ -12,6 +12,17 @@
         </tr>
       </thead>
       <tbody class="usersTableBody">
+        <tr *ngFor="let user of users">
+          <td>{{user.username}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>
+            <span *ngIf="user.age; else noAge">{{user.age}}</span>
+            <ng-template #noAge>
+              <span>N/A</span>
+            </ng-template>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
