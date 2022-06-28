@@ -26,4 +26,26 @@
       </tbody>
     </table>
   </div>
+  <hr>
+  <div class="table-reponsive">
+    <table class="table table-striped">
+      <thead>
+        <tr class="table-dark">
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of apiUsers | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }">
+          <td>{{user.id}}</td>
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
 </div>
