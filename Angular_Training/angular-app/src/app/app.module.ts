@@ -13,6 +13,7 @@ import { signUpFormReducer } from './sign-up-form/store/sign-up-form.reducer';
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -43,6 +44,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     NgxPaginationModule,
     HttpClientModule,
     StoreModule.forRoot({ userData: signUpFormReducer }, { metaReducers }),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

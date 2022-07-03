@@ -38,7 +38,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of apiUsers | paginate: { itemsPerPage: 6, currentPage: p, totalItems: total }">
+        <tr *ngFor="let user of apiUsers | paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }">
           <td>{{user.id}}</td>
           <td>{{user.firstName}}</td>
           <td>{{user.lastName}}</td>
