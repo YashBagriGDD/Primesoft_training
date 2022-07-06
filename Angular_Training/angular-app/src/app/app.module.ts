@@ -25,6 +25,8 @@ import { CardsComponent } from './cards/cards.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -67,6 +69,8 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    MatTableModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
