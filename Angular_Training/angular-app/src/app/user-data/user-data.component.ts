@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { UserData } from '../sign-up-form/store/sign-up-form.model';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-user-data',
@@ -23,6 +24,7 @@ export class UserDataComponent implements OnInit, AfterViewInit {
   dataSource: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private store: Store, private httpClient: HttpClient) {
     this.users = this.getValue(this.store.pipe(select(selectUserData)));
@@ -47,6 +49,7 @@ export class UserDataComponent implements OnInit, AfterViewInit {
       this.total = posts.users.length;
       this.dataSource = new MatTableDataSource(this.apiUsers);
       this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
       console.log(posts);
     });
   }
