@@ -2,7 +2,7 @@
   <h1 class="mat-h1">Dashboard</h1>
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <mat-card class="dashboard-card">
+      <mat-card class="dashboard-card" [ngClass]="isTouched ? 'bg-red' : ''">
         <mat-card-header>
           <mat-card-title>
             {{card.title}}
@@ -17,6 +17,7 @@
         </mat-card-header>
         <mat-card-content class="dashboard-card-content">
           <div>Card Content Here</div>
+          <button mat-raised-button color="accent" (click)="hadleClick()">Change Background</button>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
