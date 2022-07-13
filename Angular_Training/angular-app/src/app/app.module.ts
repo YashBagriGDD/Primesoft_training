@@ -28,6 +28,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { HighlightDirective } from './highlight.directive';
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -51,6 +52,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     UserDataComponent,
     NavigationComponent,
     CardsComponent,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
