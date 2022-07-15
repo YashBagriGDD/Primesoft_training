@@ -1,3 +1,4 @@
+import { PipesExampleComponent } from './pipes-example/pipes-example.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +14,7 @@ const routes: Routes = [
       { path: '', component: CardsComponent },
       { path: 'signup', component: SignUpFormComponent },
       { path: 'users', component: UserDataComponent },
+      { path: 'pipes', component: PipesExampleComponent },
     ],
   },
 ];
