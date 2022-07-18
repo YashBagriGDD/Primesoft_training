@@ -33,7 +33,15 @@ export class CardsComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
-  hadleClick() {
-    this.isTouched = !this.isTouched;
+  hadleClick(event: Event) {
+    // this.isTouched = !this.isTouched;
+    const parentCardElement = (event.target as Element).parentElement
+      ?.parentElement?.parentElement;
+    if (parentCardElement?.classList.contains('bg-red')) {
+      parentCardElement?.classList.remove('bg-red');
+    } else {
+      parentCardElement?.classList.add('bg-red');
+    }
+    console.log(parentCardElement);
   }
 }

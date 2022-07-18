@@ -7,11 +7,14 @@ import { Observable, Observer } from 'rxjs';
   styleUrls: ['./pipes-example.component.css'],
 })
 export class PipesExampleComponent implements OnInit {
-  today = new Observable<string>((observer: Observer<string>) => {
+  today$ = new Observable<string>((observer: Observer<string>) => {
     setInterval(() => observer.next(new Date().getTime().toString()), 1000);
   });
   firstName: string = 'Yash';
   lastName: string = 'Bagri';
+  p1: number = 0.259;
+  p2: number = 1.5434233;
+  arrayExample: string[] = ['a', 'b', 'c', 'd'];
 
   constructor() {}
 

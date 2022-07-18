@@ -1,5 +1,11 @@
 <div class="container">
-  <p>Today's date and time is: {{today | async | date:'full'}}</p>
+  <p>Today's date and time is: {{today$ | async | date:'full'}}</p>
   <p>My first name will be uppercase, my last name will be lowercase: {{firstName | uppercase }} {{ lastName | lowercase
     }}</p>
+  <p>{{'thIs iS A TeSt of tItlE caSe' | titlecase}}</p>
+  <p>Percents: {{p1 | percent}}, {{p2 | percent:'4.1-5'}}</p>
+  <p>Slice back of string 2: {{lastName | slice:-2}}</p>
+  <ul>
+    <li *ngFor="let i of arrayExample | slice:1">{{i}}</li>
+  </ul>
 </div>
