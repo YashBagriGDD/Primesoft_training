@@ -30,6 +30,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HighlightDirective } from './highlight.directive';
 import { PipesExampleComponent } from './pipes-example/pipes-example.component';
+import { ExponentPipe } from './exponent.pipe';
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -55,6 +56,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     CardsComponent,
     HighlightDirective,
     PipesExampleComponent,
+    ExponentPipe,
   ],
   imports: [
     BrowserModule,

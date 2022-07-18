@@ -4,6 +4,7 @@
     }}</p>
   <p>{{'thIs iS A TeSt of tItlE caSe' | titlecase}}</p>
   <p>Percents: {{p1 | percent}}, {{p2 | percent:'4.1-5'}}</p>
+  <p>Custom pipe: {{2 | exponent:10}}</p>
   <p>Slice back of string 2: {{lastName | slice:-2}}</p>
   <ul>
     <li *ngFor="let i of arrayExample | slice:1">{{i}}</li>
