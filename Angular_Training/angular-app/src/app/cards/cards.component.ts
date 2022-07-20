@@ -50,7 +50,9 @@ export class CardsComponent {
   }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DeleteModalComponent);
+    const dialogRef = this.dialog.open(DeleteModalComponent, {
+      width: '700px',
+    });
 
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
