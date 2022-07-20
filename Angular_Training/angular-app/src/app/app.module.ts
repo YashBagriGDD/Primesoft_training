@@ -29,8 +29,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HighlightDirective } from './highlight.directive';
+import { MatDialogModule } from '@angular/material/dialog';
 import { PipesExampleComponent } from './pipes-example/pipes-example.component';
 import { ExponentPipe } from './exponent.pipe';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 // console.log all actions
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -57,6 +59,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     HighlightDirective,
     PipesExampleComponent,
     ExponentPipe,
+    DeleteModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +82,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
