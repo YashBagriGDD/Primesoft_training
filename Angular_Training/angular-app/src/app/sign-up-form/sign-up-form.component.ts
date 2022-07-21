@@ -10,6 +10,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { LoggerService } from '../services/logger.service';
 import { addUserData } from './store/sign-up-form.actions';
 
 @Component({
@@ -28,7 +29,11 @@ export class SignUpFormComponent implements OnInit {
   oneDigit: RegExp = /^(?=.*\d)/;
   oneSpecialChar: RegExp = /^(?=.*[\W])/;
 
-  constructor(private store: Store, private route: Router) {}
+  constructor(
+    private store: Store,
+    private route: Router,
+    private logger: LoggerService
+  ) {}
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({
@@ -50,7 +55,7 @@ export class SignUpFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.signUpForm);
+    this.logger.log(this.signUpForm);
     this.signUpForm.markAllAsTouched();
 
     if (this.signUpForm.valid) {

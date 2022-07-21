@@ -3,6 +3,7 @@ import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { MatDialog } from '@angular/material/dialog';
 import { DeleteModalComponent } from '../delete-modal/delete-modal.component';
+import { LoggerService } from '../services/logger.service';
 
 @Component({
   selector: 'app-cards',
@@ -33,7 +34,8 @@ export class CardsComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private logger: LoggerService
   ) {}
 
   hadleClick(card: any) {
@@ -45,7 +47,7 @@ export class CardsComponent {
     // } else {
     //   parentCardElement?.classList.add('bg-red');
     // }
-    console.log(card);
+    this.logger.log(card);
     card['isTouched'] = !card['isTouched'];
   }
 
@@ -55,7 +57,7 @@ export class CardsComponent {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      this.logger.log(`Dialog result: ${result}`);
     });
   }
 }
