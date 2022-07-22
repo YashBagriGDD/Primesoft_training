@@ -1,3 +1,4 @@
+import { UserDataService } from './../services/user-data.service';
 import { ThisReceiver } from '@angular/compiler';
 import { Component, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
 import {
@@ -32,7 +33,8 @@ export class SignUpFormComponent implements OnInit {
   constructor(
     private store: Store,
     private route: Router,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private userData: UserDataService
   ) {}
 
   ngOnInit(): void {
@@ -69,7 +71,8 @@ export class SignUpFormComponent implements OnInit {
         address: this.signUpForm.get('address')?.value,
       };
 
-      this.store.dispatch(addUserData(formData));
+      // this.store.dispatch(addUserData(formData));
+      this.userData.add(formData);
       this.clearForm();
       this.route.navigate(['users']);
     }

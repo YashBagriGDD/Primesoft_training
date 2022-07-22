@@ -9,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { LoggerService } from '../services/logger.service';
+import { UserDataService } from '../services/user-data.service';
 
 @Component({
   selector: 'app-user-data',
@@ -23,20 +24,27 @@ export class UserDataComponent implements OnInit, AfterViewInit {
   total: number = 0;
   columndefs: any[] = ['id', 'firstName', 'lastName', 'email'];
   dataSource: any;
+  usersColumnDefs: any[] = ['username', 'firstName', 'lastName', 'age'];
+  usersDataSource: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+  @ViewChild(MatPaginator) usersPaginator!: MatPaginator;
+  @ViewChild(MatSort) usersSort!: MatSort;
+
   constructor(
     private store: Store,
     private httpClient: HttpClient,
-    private logger: LoggerService
+    private logger: LoggerService,
+    private userData: UserDataService
   ) {
-    this.users = this.getValue(this.store.pipe(select(selectUserData)));
+    // this.users = this.getValue(this.store.pipe(select(selectUserData)));
+    this.users = [];
   }
 
   ngOnInit(): void {
-    this.logger.log(this.users);
+    this.fetchStoreUsers();
     this.fetchApiUsers();
   }
 
@@ -46,6 +54,14 @@ export class UserDataComponent implements OnInit, AfterViewInit {
     let value: any;
     obj.subscribe((v) => (value = v));
     return value;
+  }
+
+  fetchStoreUsers() {
+    this.users = this.userData.get();
+    this.usersDataSource = new MatTableDataSource(this.users);
+    this.usersDataSource.paginator = this.usersPaginator;
+    this.usersDataSource.sort = this.usersSort;
+    this.logger.log(this.users);
   }
 
   fetchApiUsers() {
