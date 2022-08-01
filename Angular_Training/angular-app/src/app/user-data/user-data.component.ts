@@ -30,8 +30,8 @@ export class UserDataComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  @ViewChild(MatPaginator) usersPaginator!: MatPaginator;
-  @ViewChild(MatSort) usersSort!: MatSort;
+  // @ViewChild(MatPaginator) usersPaginator!: MatPaginator;
+  // @ViewChild(MatSort) usersSort!: MatSort;
 
   constructor(
     private store: Store,
@@ -59,8 +59,8 @@ export class UserDataComponent implements OnInit, AfterViewInit {
   fetchStoreUsers() {
     this.users = this.userData.get();
     this.usersDataSource = new MatTableDataSource(this.users);
-    this.usersDataSource.paginator = this.usersPaginator;
-    this.usersDataSource.sort = this.usersSort;
+    // this.usersDataSource.paginator = this.usersPaginator;
+    // this.usersDataSource.sort = this.usersSort;
     this.logger.log(this.users);
   }
 
